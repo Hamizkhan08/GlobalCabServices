@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Cab Services - Professional & Reliable</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Font Awesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* Global Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /*
+      --- NAVBAR ---
+      FIXED: This new navbar structure is fully responsive and solves the "messy on zoom" issue.
+      It uses modern CSS (Flexbox) for alignment instead of problematic margins.
+    */
+    nav.navbar {
+      background: transparent;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+      z-index: 1000;
+    }
+
+    nav.navbar.scrolled {
+      background-color: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar-brand-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar-brand-container img {
+      height: 45px;
+      width: auto;
+    }
+    
+    .navbar-brand-container h4 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0; /* Resets any default margin */
+    }
+
+    .navbar-nav {
+      gap: 1rem;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #ffc107 !important;
+    }
+
+    .btn-book-now-nav {
+      background-color: #28a745;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.5rem 1.25rem;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book-now-nav:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background: url("static/images/h5.jpeg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 15px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-content .btn-hero {
+      background-color: #ffc107;
+      color: #333;
+      border: none;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-content .btn-hero:hover {
+      background-color: #e0a800;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    }
+
+    /* Services Section (Cars) */
+    .services-section {
+      padding: 80px 0;
+      /* IMPROVED: Using a gradient overlay on the hero image for a cohesive, premium look */
+      background: linear-gradient(rgba(20, 20, 20, 0.97), rgba(20, 20, 20, 0.97)), url('images/h5.jpeg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .service-card {
+      background: rgba(40, 40, 40, 0.8);
+      color: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-card .card-body {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card h5 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-card .btn-book-service {
+      background-color: #ffc107;
+      color: #333;
+      font-weight: 600;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+    }
+
+    .service-card .btn-book-service:hover {
+      background-color: #e0a800;
+    }
+    
+    /* 
+      --- EYE VIEW COUNT SECTION (RESTORED) ---
+      Brought back your original blinking eye section, with cleaner CSS.
+    */
+    .eye-view-section {
+      padding: 80px 0;
+      background: #000;
+    }
+    .eye-view-section h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    .eye-view-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .eye-svg {
+        width: 100%;
+        height: auto;
+        transform-origin: 50% 50%;
+        animation: blink 5s infinite;
+    }
+    @keyframes blink {
+        0%, 88%, 100% { transform: scaleY(1); }
+        90%, 92% { transform: scaleY(0.01); }
+    }
+
+    /* Booking & Location Section */
+    .booking-section {
+      padding: 80px 0;
+      background: #f8f9fa;
+    }
+    .booking-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .btn-contact {
+      display: inline-block;
+      background-color: #28a745;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-contact:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+    }
+    .map-container .ratio {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    /* --- FOOTER (RESTORED & IMPROVED) --- */
+    .footer-section {
+      background-color: #212529;
+      color: #fff;
+      padding: 60px 0 20px;
+    }
+    .footer-section .footer-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .footer-section .footer-contacts p {
+        margin-bottom: 0.75rem;
+        color: #ccc;
+    }
+    .footer-section .footer-contacts i { color: #ffc107; }
+    .footer-section a { color: #ffc107; text-decoration: none; }
+    .footer-section a:hover { text-decoration: underline; }
+    
+    /* Restored Buttons Styling */
+    .footer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1rem;
+        align-items: flex-start;
+    }
+    .btn-check-availability {
+        background-color: transparent;
+        border: 2px solid #ffc107;
+        color: #ffc107;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+    .btn-check-availability:hover {
+        background-color: #ffc107;
+        color: #212529;
+    }
+    .btn-whatsapp-now {
+        background-color: #25d366;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+    .btn-whatsapp-now:hover {
+        background-color: #20b954;
+    }
+
+    .footer-routes h5 {
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    .footer-section .routes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-section .route-badge {
+      background-color: #343a40;
+      color: #ddd;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-button {
+      position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff;
+      border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 30px;
+      cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999;
+      transition: all 0.3s; display: flex; align-items: center; justify-content: center;
+    }
+    .floating-button:hover { background-color: #20b954; transform: scale(1.1); }
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            background-color: rgba(25, 25, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px; padding: 1rem; margin-top: 1rem; text-align: center;
+        }
+    }
+    @media (max-width: 768px) {
+        .hero-content h1 { font-size: 2.5rem; }
+        .booking-section .col-md-6 { margin-bottom: 40px; }
+        .footer-routes, .footer-brand-col { text-align: center; }
+        .routes-container, .footer-buttons { justify-content: center; }
+        .footer-buttons {align-items: center;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="navbar-brand-container">
+            <img src="static/images/logo1.png" alt="Logo" href="{{ url_for('index') }}">
+            <h4>Global Cab Services</h4>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+         <li class="nav-item">
+  <button class="btn btn-book-now-nav" onclick="window.location.href='https://zf87403l.forms.app/cab-booking-form';">
+    Book Now
+  </button>
+</li>
+
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Cars</a></li>
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+          <a class="nav-link" href="{{ url_for('online_booking') }}">Book Online</a>
+
+         
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/search?client=ms-android-oppo-rvo3&sca_esv=3b736228b17ed96f&hl=en-GB&cs=1&biw=1536&bih=730&sxsrf=AHTn8zrtOu62ayPaJ2Zl4iCTNSwmg-owgw:1742316046552&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzXe6E7DKXP1IWB0wrRSIf0Z9R8IBr3JQ_g5Wt7HWxCbTN1b3NUWGLK2DLpoDFwL48gFohBCk-Hhf2b2jIeuYREtfSzABcwYdqngtfODgwx-AIkp2Iw%3D%3D&q=Global+tours+and+travels+Reviews&sa=X&ved=2ahUKEwj48amIiZSMAxWlk1YBHWfPAt4Q0bkNegQIJRAE" target="_blank">
+           Reviews <i class="fas fa-star text-warning"></i>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Welcome to Global Cab Services</h1>
+      <p>Welcome to Global Cab Service! We specialize in reliable and comfortable pick-up and drop services across Nashik, Pune, Mumbai, and all over India. Whether you're traveling for business or leisure, our professional drivers and well-maintained fleet ensure a safe and seamless journey. Let us take you wherever you need to go with convenience and ease.</p>
+      <a href="#services" class="btn btn-hero">View Our Cars</a>
+    </div>
+  </section>
+
+  <!-- Services Section (Cars) - RESTORED -->
+  <section class="services-section" id="services">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Our Fleet of Cars</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- ALL 10 CARS RESTORED WITH IMPROVED STYLING -->
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="100"><img src="static/images/aura.webp" alt="Aura"/><div class="card-body"><h5>Aura</h5><p>Comfortable and stylish for city rides.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="200"><img src="static/images/ertiga.webp" alt="Ertiga"/><div class="card-body"><h5>Maruti Suzuki Ertiga</h5><p>Spacious, reliable, and perfect for family trips.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="300"><img src="static/images/crysta.jpg" alt="Crysta"/><div class="card-body"><h5>Crysta Innova</h5><p>Premium comfort with ample legroom.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="100"><img src="static/images/dzire.jpg" alt="Dzire"/><div class="card-body"><h5>Maruti Suzuki Dzire</h5><p>Fuel-efficient sedan with a smooth drive.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="200"><img src="static/images/ciaz.jpg" alt="Ciaz"/><div class="card-body"><h5>Maruti Ciaz</h5><p>Stylish sedan offering comfort and performance.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="300"><img src="static/images/hondacity.jpg" alt="Honda City"/><div class="card-body"><h5>Honda City (Luxurious)</h5><p>Luxurious interior and superior performance.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="100"><img src="static/images/kia.jpg" alt="Kia Carnes"/><div class="card-body"><h5>Kia Carnes</h5><p>Modern styling and spacious cabin.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="200"><img src="static/images/innova.webp" alt="Innova"/><div class="card-body"><h5>Toyota Innova</h5><p>Trusted multi-purpose vehicle for long journeys.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="300"><img src="static/images/rumion.jpg" alt="Rumion"/><div class="card-body"><h5>Toyota Rumion</h5><p>Spacious cabin, ideal for group travel.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+        <div class="col-lg-4 col-md-6 d-flex"><div class="service-card w-100" data-aos="fade-up" data-aos-delay="100"><img src="static/images/etios.jpeg" alt="Etios"/><div class="card-body"><h5>Toyota Etios</h5><p>Reliable sedan with great mileage.</p><a class="btn btn-book-service" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Book Now</a>
+</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eye View Count Section - RESTORED -->
+  <section class="eye-view-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-4">Total Website Views</h2>
+      <div class="eye-view-wrapper">
+        <svg class="eye-svg" viewBox="0 0 120 100">
+          <path d="M 10,50 Q 60,0 110,50 Q 60,100 10,50 Z" fill="#fff"/>
+          <circle cx="60" cy="50" r="15" fill="#000" />
+<text x="60" y="55" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">{{ view_count }}</text>          <line x1="45" y1="25" x2="42" y2="15" stroke="#fff" stroke-width="2" /><line x1="60" y1="20" x2="60" y2="10" stroke="#fff" stroke-width="2" /><line x1="75" y1="25" x2="78" y2="15" stroke="#fff" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form Section with Google Map -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <h2>Contact Us</h2>
+          <a class="btn btn-contact" href="https://zf87403l.forms.app/cab-booking-form" target="_blank">Contact Us</a>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <h2>Our Location</h2>
+          <div class="map-container">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://maps.google.com/maps?q=Green%20Park%20Wadala%20Rd%2C%20Sai%20Nath%20Nagar%2C%20Nashik%2C%20Maharashtra%20422006&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section - RESTORED -->
+  <footer class="footer-section" id="footer">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 footer-brand-col">
+          <div class="footer-brand">Global Cab Services</div>
+          <div class="footer-contacts">
+            <p><i class="fas fa-phone-alt me-2"></i>+91 9881598109</p>
+            <p><i class="fas fa-phone-alt me-2"></i>+91 7020858192</p>
+            <p><i class="fas fa-envelope me-2"></i>khanafzal0404@gmail.com</p>
+          </div>
+          <!-- RESTORED BUTTONS -->
+          <div class="footer-buttons">
+            <button class="btn-check-availability" onclick="window.open('https://wa.me/7387220667?text=Check%20Availability', '_blank')">Check Availability</button>
+            <button class="btn-whatsapp-now" onclick="window.open('https://wa.me/7387220667', '_blank')">WhatsApp Now</button>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12 footer-routes mt-4 mt-lg-0">
+          <h5>Our Top Routes</h5>
+          <!-- RESTORED FULL LIST OF ROUTES -->
+          <div class="routes-container">
+            <span class="route-badge">Nashik To Mumbai</span><span class="route-badge">Nashik To Shirdi</span><span class="route-badge">Nashik To Pune</span><span class="route-badge">Nashik To Aurangabad</span><span class="route-badge">Nashik To Surat</span><span class="route-badge">Nashik To Trimbkeshwar</span><span class="route-badge">Mumbai To Nashik</span><span class="route-badge">Mumbai To Shirdi</span><span class="route-badge">Mumbai To Pune</span><span class="route-badge">Mumbai To Aurangabad</span><span class="route-badge">Mumbai To Surat</span><span class="route-badge">Mumbai To Trimbkeshwar</span><span class="route-badge">Shirdi To Mumbai</span><span class="route-badge">Shirdi To Nashi</span><span class="route-badge">Shirdi To Pune</span><span class="route-badge">Shirdi To Aurangabad</span><span class="route-badge">Shirdi To Surat</span><span class="route-badge">Shirdi To Trimbkeshwar</span><span class="route-badge">Pune To Mumbai</span><span class="route-badge">Pune To Shirdi</span><span class="route-badge">Pune To Nashik</span><span class="route-badge">Pune To Aurangabad</span><span class="route-badge">Pune To Surat</span><span class="route-badge">Pune To Trimbkeshwar</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Global Cab Services. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="floating-button" onclick="window.open('https://wa.me/7387220667', '_blank')"><i class="fab fa-whatsapp"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 50, once: true });
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Online - Global Cab Services</title>
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" />
+  
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  
+  <!-- Font Awesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* Global Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR (FIXED) */
+    nav.navbar {
+      background: transparent !important;
+      transition: background-color 0.3s ease;
+      backdrop-filter: blur(8px);
+      z-index: 999;
+    }
+    nav.navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+    /* --- The Fix Starts Here --- */
+    nav .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #fff !important;
+      /* Removed margin-left: auto; which was pushing it right */
+    }
+    nav .navbar-brand img {
+      height: 50px; /* Use a fixed height instead of a huge scale transform */
+      margin-right: 15px; /* Creates space between logo and title */
+      /* Removed transform, transform-origin, and negative margins */
+    }
+    nav .navbar-brand h4 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 0; /* Removed negative margins and default h4 margin */
+      font-weight: 700;
+    }
+    /* --- The Fix Ends Here --- */
+    nav .navbar-nav {
+      margin-left: auto;
+      gap: 1.5rem;
+    }
+    nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    nav .btn-book-now {
+      background-color: #28a745;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    nav .btn-book-now:hover {
+      background-color: #218838;
+    }
+    /* This rule is now part of the .navbar-brand h4 rule above, so it's no longer needed separately */
+    /*
+    nav h4 { ... }
+    */
+
+
+    /* HERO SECTION (Book Online) */
+    .hero-section {
+      position: relative;
+      min-height: 60vh;
+      width: 100%;
+      background: url("static/images/onl5.jpeg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 60px 15px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* SERVICES SECTION (Replacing the Booking Form) */
+    .services-section {
+      padding: 60px 0;
+    }
+    .services-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    .service-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .service-card .card-body {
+      text-align: center;
+      padding: 20px;
+    }
+    .service-card h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    .service-card .btn-read-more {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s ease;
+    }
+    .service-card .btn-read-more:hover {
+      background-color: #218838;
+    }
+
+    /* FOOTER (Copied from your index.html) */
+    .footer-section {
+      background-color: #343a40;
+      color: #fff;
+      padding: 40px 0;
+    }
+    .footer-section .footer-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .footer-section .footer-contacts {
+      margin-bottom: 1.5rem;
+    }
+    .footer-section a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    .footer-section a:hover {
+      color: #e0a800;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 15px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .footer-section .routes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .footer-section .route-badge {
+      background-color: #ffc107;
+      color: #333;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .footer-section .btn-check-availability {
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-top: 15px;
+    }
+    .footer-section .btn-check-availability:hover {
+      background-color: #fff;
+      color: #343a40;
+    }
+
+    /* Floating WhatsApp/Phone Button */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 15px 18px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: background 0.3s;
+    }
+    .floating-button:hover {
+      background-color: #20b954;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+    .btn-whatsapp-now {
+      background-color: #25d366;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    .btn-whatsapp-now:hover {
+      background-color: #20b954;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (copied from index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+    <div class="container">
+      <!-- MINOR HTML CHANGE: Grouped logo and title together for stability -->
+         <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+        <img src="static/images/logo1.png" alt="Logo">
+        <h4>Global Cab Services</h4>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item ms-2">
+            <button class="btn btn-book-now" onclick="document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });">
+              Book Now
+            </button>
+          </li>
+     <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('index') }}#services">Cars</a>
+    </li>
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+          <a class="nav-link" href="{{ url_for('online_booking') }}">Book Online</a>
+
+         
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/search?client=ms-android-oppo-rvo3&sca_esv=3b736228b17ed96f&hl=en-GB&cs=1&biw=1536&bih=730&sxsrf=AHTn8zrtOu62ayPaJ2Zl4iCTNSwmg-owgw:1742316046552&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzXe6E7DKXP1IWB0wrRSIf0Z9R8IBr3JQ_g5Wt7HWxCbTN1b3NUWGLK2DLpoDFwL48gFohBCk-Hhf2b2jIeuYREtfSzABcwYdqngtfODgwx-AIkp2Iw%3D%3D&q=Global+tours+and+travels+Reviews&sa=X&ved=2ahUKEwj48amIiZSMAxWlk1YBHWfPAt4Q0bkNegQIJRAE" target="_blank">
+           Reviews <i class="fas fa-star text-warning"></i>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (Book Online) -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+      <h1>Book Your Ride Online</h1>
+      <p>Plan your next trip quickly and easily. Choose from our wide range of services and travel worry-free!</p>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES SECTION -->
+  <section class="services-section" data-aos="fade-up" data-aos-duration="1500">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="row">
+        <!-- Card 1: Local City Tour -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card h-100">
+            <!-- Replace with your own icon or image -->
+            <img src="static/images/city.gif" class="card-img-top" alt="Local City Tour">
+            <div class="card-body">
+              <h5 class="card-title">Local City Tour</h5>
+              <p class="card-text">Explore the City with Ease</p>
+              <a href="#" class="btn btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: Airport Pickup -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card h-100">
+            <img src="static/images/airport.gif" class="card-img-top" alt="Airport Pickup">
+            <div class="card-body">
+              <h5 class="card-title">Airport Pickup</h5>
+              <p class="card-text">Convenient and Reliable Airport Transfer</p>
+              <a href="#" class="btn btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Local Cab Hire -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card h-100">
+            <img src="static/images/cab.gif" class="card-img-top" alt="Local Cab Hire">
+            <div class="card-body">
+              <h5 class="card-title">Local Cab Hire</h5>
+              <p class="card-text">Flexible and affordable cab options</p>
+              <a href="#" class="btn btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Card 4: City Tour Rental -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card h-100">
+            <img src="static/images/rental.gif" class="card-img-top" alt="City Tour Rental">
+            <div class="card-body">
+              <h5 class="card-title">City Tour Rental</h5>
+              <p class="card-text">Explore the city comfortably</p>
+              <a href="#" class="btn btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5: Intercity Cab -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card h-100">
+            <img src="static/images/last.gif" class="card-img-top" alt="Intercity Cab">
+            <div class="card-body">
+              <h5 class="card-title">Intercity Cab</h5>
+              <p class="card-text">Reliable city-to-city rides</p>
+              <a href="#" class="btn btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION (copied from index.html) -->
+  <footer class="footer-section" id="footer">
+    <div class="container" data-aos="fade-up" data-aos-duration="1500">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="footer-brand">Global Cab Services</div>
+          <div class="footer-contacts">
+            <p><i class="fas fa-phone-alt me-2"></i>+91 9881598109</p>
+            <p><i class="fas fa-phone-alt me-2"></i>+91 7020858192</p>
+            <p><i class="fas fa-envelope me-2"></i>khanafzal0404@gmail.com</p>
+            <button class="btn-check-availability" onclick="window.open('https://wa.me/7387220667?text=Check%20Availability', '_blank')">Check Availability</button>
+            <!-- Added WhatsApp Now button -->
+            <button class="btn-whatsapp-now" onclick="window.open('https://wa.me/7387220667', '_blank')">WhatsApp Now</button>
+          </div>
+        </div>
+        <div class="col-md-8 text-end">
+          <h5>Our Top Routes</h5>
+          <div class="routes-container">
+            <span class="route-badge">Nashik To Mumbai</span>
+            <span class="route-badge">Nashik To Shirdi</span>
+            <span class="route-badge">Nashik To Pune</span>
+            <span class="route-badge">Nashik To Aurangabad</span>
+            <span class="route-badge">Nashik To Surat</span>
+            <span class="route-badge">Nashik To Trimbkeshwar</span>
+            <span class="route-badge">Mumbai To Nashik</span>
+            <span class="route-badge">Mumbai To Shirdi</span>
+            <span class="route-badge">Mumbai To Pune</span>
+            <span class="route-badge">Mumbai To Aurangabad</span>
+            <span class="route-badge">Mumbai To Surat</span>
+            <span class="route-badge">Mumbai To Trimbkeshwar</span>
+            <span class="route-badge">Shirdi To Mumbai</span>
+            <span class="route-badge">Shirdi To Nashi</span>
+            <span class="route-badge">Shirdi To Pune</span>
+            <span class="route-badge">Shirdi To Aurangabad</span>
+            <span class="route-badge">Shirdi To Surat</span>
+            <span class="route-badge">Shirdi To Trimbkeshwar</span>
+            <span class="route-badge">Pune To Mumbai</span>
+            <span class="route-badge">Pune To Shirdi</span>
+            <span class="route-badge">Pune To Nashik</span>
+            <span class="route-badge">Pune To Aurangabad</span>
+            <span class="route-badge">Pune To Surat</span>
+            <span class="route-badge">Pune To Trimbkeshwar</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom mt-3">
+        © 2025 Global Cab Services. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Floating WhatsApp/Phone Button -->
+  <button class="floating-button" onclick="window.open('https://wa.me/7387220667', '_blank')">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+  
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1500,
+      offset: 50,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Navbar scroll behavior
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
