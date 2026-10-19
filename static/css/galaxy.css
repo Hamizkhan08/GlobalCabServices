@@ -57,6 +57,15 @@ button, input, select, textarea { font-family: var(--font); }
 button { cursor: pointer; }
 :target { scroll-margin-top: calc(var(--navbar-h) + 20px); }
 
+/* PERFORMANCE: below-fold sections get content-visibility for paint savings */
+.section, footer { content-visibility: auto; contain-intrinsic-size: auto 400px; }
+/* Hero is LCP - never defer it */
+.hero { content-visibility: visible; contain-intrinsic-size: none; }
+/* Stable image containers prevent CLS */
+.svc-card__img-wrap, .fleet-card__img-wrap { aspect-ratio: 16/9; }
+/* GIF/video containers: promote to own layer */
+.footer__video-bg, .hero__video-wrap { will-change: transform; }
+
 /* CONTAINER */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 1rem; }
 @media(min-width:640px){ .container{ padding-inline:1.5rem; } }

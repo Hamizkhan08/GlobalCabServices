@@ -16,22 +16,29 @@
   <meta property="og:description" content="Looking for a cab service in Nashik? Explore sedan cars, Ertiga, Innova Crysta, Tempo Traveller and Winger for local travel, airport transfers and outstation trips with Global Cab Services." />
   <meta property="og:url" content="{{ site_url }}/" />
   <meta property="og:site_name" content="Global Cab Services" />
-  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />
   <meta property="og:image:alt" content="Global Cab Services Fleet in Nashik" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Global Cab Services | Cab &amp; Taxi Service in Nashik" />
   <meta name="twitter:description" content="Looking for a cab service in Nashik? Explore sedan cars, Ertiga, Innova Crysta, Tempo Traveller and Winger for local travel, airport transfers and outstation trips with Global Cab Services." />
-  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />
 
-  <!-- Fonts -->
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="{{ url_for('static', filename='images/herocab.webp') }}" fetchpriority="high" />
+
+  <!-- Fonts: preconnect + async load with font-display:swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" /></noscript>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Icons: deferred to not block render -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" /></noscript>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
@@ -47,8 +54,8 @@
         "name": "Global Cab Services",
         "alternateName": "Global Cab Services Nashik",
         "url": "{{ site_url }}/",
-        "logo": "{{ site_url }}{{ url_for('static', filename='images/logo1.png') }}",
-        "image": "{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}",
+        "logo": "{{ site_url }}{{ url_for('static', filename='images/logo1.webp') }}",
+        "image": "{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}",
         "description": "Premier cab service and car rental in Nashik. Providing 24/7 airport transfers, outstation one-way and round trips, local hourly rentals, and corporate travel across Maharashtra.",
         "telephone": "+919881598109",
         "email": "globalcabservicesnsk@gmail.com",
@@ -136,7 +143,7 @@
       <div class="navbar__inner">
         <!-- Logo -->
         <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
-          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="40" height="40" />
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="40" height="40" />
           <div class="navbar__logo-wrap">
             <span class="navbar__logo-name">Global Cab Services</span>
             <span class="navbar__logo-tag">Nashik, Maharashtra</span>
@@ -176,7 +183,7 @@
     <!-- Drawer Header -->
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Nashik cab booking logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Nashik cab booking logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -239,7 +246,7 @@
 <section class="hero" id="hero" aria-label="Hero section">
   <!-- Video background with gif fallback -->
   <div class="hero__video-wrap" aria-hidden="true">
-    <img class="hero__video-fallback" src="{{ url_for('static', filename='images/herocab.jpeg') }}" alt="Global Cab Services fleet cars on road in Nashik" />
+    <img class="hero__video-fallback" src="{{ url_for('static', filename='images/herocab.webp') }}" alt="Global Cab Services fleet cars on road in Nashik" width="1600" height="900" fetchpriority="high" />
     <div class="hero__video-overlay"></div>
   </div>
   <div class="hero__overlay" aria-hidden="true"></div>
@@ -356,7 +363,7 @@
       <!-- Service 5: Executive Class -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.jpg') }}" alt="Executive class cab for corporate travel" loading="lazy" />
+          <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.webp') }}" alt="Executive class cab for corporate travel" loading="lazy" />
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
         </div>
         <div class="svc-card__body">
@@ -439,7 +446,7 @@
       <!-- Toyota Innova Crysta -->
       <article class="fleet-card" role="listitem">
         <div class="fleet-card__img-wrap">
-          <img class="fleet-card__img" src="{{ url_for('static', filename='images/crysta.jpg') }}" alt="Toyota Innova Crysta premium cab" loading="lazy" />
+          <img class="fleet-card__img" src="{{ url_for('static', filename='images/crysta.webp') }}" alt="Toyota Innova Crysta premium cab" loading="lazy" />
         </div>
         <div class="fleet-card__body">
           <h3 class="fleet-card__name">Toyota Innova Crysta</h3>
@@ -455,7 +462,7 @@
       <!-- Tempo Traveller -->
       <article class="fleet-card" role="listitem">
         <div class="fleet-card__img-wrap">
-          <img class="fleet-card__img" src="{{ url_for('static', filename='images/tempo_traveller.jpg') }}" alt="Tempo Traveller group minibus" loading="lazy" />
+          <img class="fleet-card__img" src="{{ url_for('static', filename='images/tempo_traveller.webp') }}" alt="Tempo Traveller group minibus" loading="lazy" />
         </div>
         <div class="fleet-card__body">
           <h3 class="fleet-card__name">Tempo Traveller</h3>
@@ -471,7 +478,7 @@
       <!-- Tata Winger -->
       <article class="fleet-card" role="listitem">
         <div class="fleet-card__img-wrap">
-          <img class="fleet-card__img" src="{{ url_for('static', filename='images/tata_winger.jpg') }}" alt="Tata Winger passenger van" loading="lazy" />
+          <img class="fleet-card__img" src="{{ url_for('static', filename='images/tata_winger.webp') }}" alt="Tata Winger passenger van" loading="lazy" />
         </div>
         <div class="fleet-card__body">
           <h3 class="fleet-card__name">Tata Winger Van</h3>
@@ -973,7 +980,7 @@
 </div>
 
 <!-- JS -->
-<script src="{{ url_for('static', filename='js/galaxy.js') }}"></script>
+<script src="{{ url_for('static', filename='js/galaxy.js') }}" defer></script>
 </body>
 </html>
 

@@ -16,13 +16,13 @@
   <meta property="og:description" content="Reliable airport transfers, one-way outstation cabs, round trips, and local car rentals in Nashik. Book 24/7 on WhatsApp or call." />
   <meta property="og:url" content="{{ site_url }}/services" />
   <meta property="og:site_name" content="Global Cab Services" />
-  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cab Rental Services in Nashik | Global Cab Services" />
   <meta name="twitter:description" content="Reliable airport transfers, one-way outstation cabs, round trips, and local car rentals in Nashik. Book 24/7 on WhatsApp or call." />
-  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -98,7 +98,7 @@
     <div class="container">
       <div class="navbar__inner">
         <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
-          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services - Cab Service in Nashik" width="40" height="40" />
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services - Cab Service in Nashik" width="40" height="40" />
           <div class="navbar__logo-wrap">
             <span class="navbar__logo-name">Global Cab Services</span>
             <span class="navbar__logo-tag">Nashik, Maharashtra</span>
@@ -133,7 +133,7 @@
   <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -174,7 +174,7 @@
 <main id="main-content">
   <!-- PAGE HERO -->
   <section class="page-hero" style="position:relative;padding:7.5rem 0 3.5rem;background:#0d111c;color:#fff;text-align:center;">
-    <div class="page-hero__bg" style="position:absolute;inset:0;background-image:url('{{ url_for('static', filename='images/herocab.jpeg') }}');background-size:cover;background-position:center;opacity:0.22;"></div>
+    <div class="page-hero__bg" style="position:absolute;inset:0;background-image:url('{{ url_for('static', filename='images/herocab.webp') }}');background-size:cover;background-position:center;opacity:0.22;"></div>
     <div class="container" style="position:relative;z-index:2;">
       <span class="sec-eyebrow" style="color:var(--clr-gold);">OUR CAB SERVICES</span>
       <h1 class="page-hero__title" style="font-size:clamp(1.8rem,4.5vw,2.75rem);font-weight:800;margin-bottom:1rem;color:#fff;">
@@ -293,7 +293,7 @@
         <!-- Service 5: Corporate Travel -->
         <article class="svc-card" role="listitem">
           <div class="svc-card__img-wrap">
-            <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.jpg') }}" alt="Executive corporate cab service in Nashik with premium sedans" loading="lazy" />
+            <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.webp') }}" alt="Executive corporate cab service in Nashik with premium sedans" loading="lazy" />
             <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
           </div>
           <div class="svc-card__body">
@@ -424,6 +424,6 @@
   </a>
 </div>
 
-<script src="{{ url_for('static', filename='js/galaxy.js') }}"></script>
+<script src="{{ url_for('static', filename='js/galaxy.js') }}" defer></script>
 </body>
 </html>
