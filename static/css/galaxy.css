@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    Global Cab Services - MAIN STYLESHEET v2.0
    Design: Premium Charcoal & Champagne Gold. Mobile-First.
    ================================================================ */
@@ -514,15 +514,21 @@ select.field__ctrl { background-image: url("data:image/svg+xml,%3Csvg xmlns='htt
 .float-actions {
   position: fixed;
   bottom: 24px; right: 24px;
-  z-index: 900;
+  z-index: 9990;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: .75rem;
+  pointer-events: none;
 }
-@media(max-width:640px){ .float-actions{ bottom:16px; right:16px; } }
+.float-actions .float-btn {
+  pointer-events: auto;
+}
+@media(max-width:640px){
+  .float-actions { bottom: 20px; right: 20px; gap: .65rem; }
+}
 @supports(bottom:env(safe-area-inset-bottom)){
-  .float-actions{ bottom: calc(24px + env(safe-area-inset-bottom)); }
+  .float-actions { bottom: calc(24px + env(safe-area-inset-bottom)); }
 }
 
 .float-btn {
@@ -538,28 +544,30 @@ select.field__ctrl { background-image: url("data:image/svg+xml,%3Csvg xmlns='htt
   cursor: pointer;
   transition: transform .22s var(--ease), box-shadow .22s var(--ease);
 }
-@media(max-width:640px){ .float-btn{ width:50px; height:50px; font-size:1.25rem; } }
+@media(max-width:640px){
+  .float-btn { width: 52px; height: 52px; font-size: 1.3rem; }
+}
 
 .float-btn--wa {
   background: var(--clr-wa);
   color: var(--clr-white);
-  box-shadow: 0 4px 22px rgba(37,211,102,.45);
+  box-shadow: 0 4px 22px rgba(37,211,102,.5);
 }
 .float-btn--wa:hover {
   transform: scale(1.12);
-  box-shadow: 0 6px 30px rgba(37,211,102,.6);
+  box-shadow: 0 6px 30px rgba(37,211,102,.65);
   color: var(--clr-white);
 }
 
 .float-btn--phone {
-  background: var(--clr-gold);
-  color: var(--clr-dark);
-  box-shadow: 0 4px 22px rgba(201,168,76,.4);
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  box-shadow: 0 4px 22px rgba(2,132,199,.5);
 }
 .float-btn--phone:hover {
   transform: scale(1.12);
-  box-shadow: 0 6px 30px rgba(201,168,76,.55);
-  color: var(--clr-dark);
+  box-shadow: 0 6px 30px rgba(2,132,199,.65);
+  color: #ffffff;
 }
 
 /* Tooltip on hover */
@@ -582,7 +590,7 @@ select.field__ctrl { background-image: url("data:image/svg+xml,%3Csvg xmlns='htt
 }
 .float-btn:hover .float-btn__tooltip { opacity: 1; }
 
-/* Pulse ring on WA button */
+/* Pulse ring on WA and Phone buttons */
 .float-btn--wa::after {
   content: '';
   position: absolute;
@@ -596,7 +604,7 @@ select.field__ctrl { background-image: url("data:image/svg+xml,%3Csvg xmlns='htt
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 2px solid rgba(201,168,76,.4);
+  border: 2px solid rgba(2,132,199,.5);
   animation: pulse-ring 2.4s ease-out infinite;
   animation-delay: .6s;
 }

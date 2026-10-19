@@ -53,10 +53,11 @@ def inject_global_seo():
         'site_url': SITE_URL,
         'business_name': 'Global Cab Services',
         'primary_phone': '+91 9881598109',
-        'secondary_phone': '+91 7020858192',
-        'primary_email': 'khanafzal0404@gmail.com',
+                'primary_email': 'khanafzal0404@gmail.com',
         'google_reviews_url': 'https://g.page/r/Cd-LLnOEWd0wEBE/review',
-        'location_name': 'Nashik, Maharashtra, India',
+        'location_name': 'Aman Paradise Appt, Wadala Rd, opp. JMCT Collage, Al Madina Colony, Sai Nath Nagar, Nashik, Maharashtra 422006',
+        'address_street': 'Aman Paradise Appt, Wadala Rd, opp. JMCT Collage, Al Madina Colony, Sai Nath Nagar',
+        'postal_code': '422006',
         'current_year': datetime.now().year,
     }
 
