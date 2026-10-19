@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'global_cab_services_secret_2026')
 
 # Production site URL configuration (configurable via environment variable)
-SITE_URL = os.environ.get('SITE_URL', 'https://globalcabservices.com').rstrip('/')
+SITE_URL = os.environ.get('SITE_URL', 'https://www.globalcabservices.in').rstrip('/')
 
 # Optional Twilio configuration (SMS/WhatsApp) - only used if credentials are set
 TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', '')

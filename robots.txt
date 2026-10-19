@@ -3,4 +3,4 @@ Allow: /
 Disallow: /scratch/
 
 # Sitemap location
-Sitemap: https://globalcabservices.com/sitemap.xml
+Sitemap: https://www.globalcabservices.in/sitemap.xml
