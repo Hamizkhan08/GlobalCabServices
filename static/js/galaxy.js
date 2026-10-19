@@ -9,7 +9,7 @@
 var GALAXY = {
   phone: '919881598109',
   name: 'Global Cab Services',
-  email: 'khanafzal0404@gmail.com',
+  email: 'globalcabservicesnsk@gmail.com',
   reviews: 'https://g.page/r/Cd-LLnOEWd0wEBE/review'
 };
 

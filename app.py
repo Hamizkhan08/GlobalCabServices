@@ -8,6 +8,7 @@ from flask import (
     redirect,
     render_template,
     request,
+    send_from_directory,
     url_for,
 )
 
@@ -34,26 +35,50 @@ except ImportError:
 VIEW_COUNT_FILE = 'view_count.txt'
 
 def get_view_count():
-    if not os.path.exists(VIEW_COUNT_FILE):
-        with open(VIEW_COUNT_FILE, 'w') as f:
-            f.write('0')
-    with open(VIEW_COUNT_FILE, 'r') as f:
+    """Read view count safely. In serverless environments like Vercel, filesystem is read-only."""
+    count = 1240
+    try:
+        tmp_file = '/tmp/view_count.txt'
+        if os.path.exists(tmp_file):
+            try:
+                with open(tmp_file, 'r') as f:
+                    count = int(f.read().strip() or '1240')
+            except Exception:
+                pass
+        elif os.path.exists(VIEW_COUNT_FILE):
+            try:
+                with open(VIEW_COUNT_FILE, 'r') as f:
+                    count = int(f.read().strip() or '1240')
+            except Exception:
+                pass
+        count += 1
+        # Serverless writable path is /tmp
+        target = tmp_file if os.path.isdir('/tmp') else VIEW_COUNT_FILE
         try:
-            count = int(f.read().strip())
-        except ValueError:
-            count = 0
-    count += 1
-    with open(VIEW_COUNT_FILE, 'w') as f:
-        f.write(str(count))
+            with open(target, 'w') as f:
+                f.write(str(count))
+        except Exception:
+            pass
+    except Exception:
+        count = 1240
     return count
 
 @app.context_processor
 def inject_global_seo():
+    site_url = SITE_URL
+    try:
+        if request and request.host:
+            host = request.host
+            if 'vercel.app' in host or 'localhost' in host:
+                proto = request.headers.get('X-Forwarded-Proto', request.scheme)
+                site_url = f"{proto}://{host}".rstrip('/')
+    except Exception:
+        pass
     return {
-        'site_url': SITE_URL,
+        'site_url': site_url,
         'business_name': 'Global Cab Services',
         'primary_phone': '+91 9881598109',
-                'primary_email': 'khanafzal0404@gmail.com',
+                'primary_email': 'globalcabservicesnsk@gmail.com',
         'google_reviews_url': 'https://g.page/r/Cd-LLnOEWd0wEBE/review',
         'location_name': 'Aman Paradise Appt, Wadala Rd, opp. JMCT Collage, Al Madina Colony, Sai Nath Nagar, Nashik, Maharashtra 422006',
         'address_street': 'Aman Paradise Appt, Wadala Rd, opp. JMCT Collage, Al Madina Colony, Sai Nath Nagar',
@@ -169,6 +194,11 @@ Phone: {phone}"""
         flash("Booking received! We will contact you shortly.", "success")
 
     return redirect(url_for('index'))
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'images'), 'logo1.png', mimetype='image/png')
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)
