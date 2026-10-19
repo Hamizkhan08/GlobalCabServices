@@ -18,6 +18,13 @@ app.secret_key = os.environ.get('SECRET_KEY', 'global_cab_services_secret_2026')
 # Production site URL configuration (configurable via environment variable)
 SITE_URL = os.environ.get('SITE_URL', 'https://www.globalcabservices.in').rstrip('/')
 
+@app.after_request
+def add_security_headers(response):
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    return response
+
 # Optional Twilio configuration (SMS/WhatsApp) - only used if credentials are set
 TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', '')
 TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', '')
