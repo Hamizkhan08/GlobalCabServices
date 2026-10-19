@@ -1,0 +1,11 @@
+scratch/
+__pycache__/
+*.pyc
+*.pyo
+view_count.txt
+.env
+.venv
+env/
+venv/
+.DS_Store
+Thumbs.db
