@@ -67,9 +67,9 @@ def inject_global_seo():
     site_url = SITE_URL
     try:
         if request and request.host:
-            host = request.host
-            if 'localhost' in host or '127.0.0.1' in host:
-                proto = request.headers.get('X-Forwarded-Proto', request.scheme)
+            proto = request.headers.get('X-Forwarded-Proto', request.scheme)
+            host = request.headers.get('X-Forwarded-Host', request.host)
+            if any(k in host for k in ['localhost', '127.0.0.1', 'workers.dev', 'vercel.app']):
                 site_url = f"{proto}://{host}".rstrip('/')
     except Exception:
         pass
