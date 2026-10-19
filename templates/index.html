@@ -805,12 +805,14 @@
               <label class="field__label" for="bf-vehicle">Vehicle Preference</label>
               <select class="field__ctrl" id="bf-vehicle" name="vehicle_pref">
                 <option value="">Any / No preference</option>
-                <option value="Hyundai Aura (Sedan)">Hyundai Aura (Sedan)</option>
-                <option value="Honda City (Premium Sedan)">Honda City (Premium Sedan)</option>
-                <option value="Maruti Suzuki Ertiga (7-Seater)">Maruti Suzuki Ertiga (7-Seater)</option>
-                <option value="Toyota Innova Crysta (Luxury SUV)">Toyota Innova Crysta (Luxury SUV)</option>
-                <option value="Tempo Traveller (17/20/26 Seater)">Tempo Traveller (17/20/26 Seater)</option>
-                <option value="Tata Winger (Group Travel)">Tata Winger (Group Travel)</option>
+                <option value="Any Sedan">Any Sedan</option>
+                <option value="Any SUV">Any SUV</option>
+                <option value="Hyundai Aura">Hyundai Aura</option>
+                <option value="Honda City">Honda City</option>
+                <option value="Maruti Suzuki Ertiga">Maruti Suzuki Ertiga</option>
+                <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+                <option value="Tempo Traveller">Tempo Traveller</option>
+                <option value="Tata Winger">Tata Winger</option>
                 <option value="Many More / Other Vehicle">Many More / Other Vehicle</option>
               </select>
             </div>
@@ -855,10 +857,10 @@
               <label class="field__label" for="bf-passengers">Number of Passengers</label>
               <select class="field__ctrl" id="bf-passengers" name="passengers">
                 <option value="">Select passengers</option>
-                <option value="1 - 4 Passengers">1 - 4 Passengers (Sedan)</option>
-                <option value="5 - 7 Passengers">5 - 7 Passengers (SUV / Ertiga / Crysta)</option>
-                <option value="8 - 15 Passengers">8 - 15 Passengers (Winger / Mini Bus)</option>
-                <option value="16+ Passengers">16+ Passengers (Tempo Traveller / Bus)</option>
+                <option value="1 - 4 Passengers">1 - 4 Passengers</option>
+                <option value="5 - 7 Passengers">5 - 7 Passengers</option>
+                <option value="8 - 15 Passengers">8 - 15 Passengers</option>
+                <option value="16+ Passengers">16+ Passengers</option>
               </select>
             </div>
             <!-- Additional Requirements -->
@@ -920,8 +922,8 @@
       <div>
         <p class="footer__col-title">Our Fleet</p>
         <ul class="footer__links">
-          <li><a class="footer__link" href="{{ url_for('fleet') }}">Hyundai Aura (Sedan)</a></li>
-          <li><a class="footer__link" href="{{ url_for('fleet') }}">Honda City (Sedan)</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Hyundai Aura</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Honda City</a></li>
           <li><a class="footer__link" href="{{ url_for('fleet') }}">Maruti Suzuki Ertiga</a></li>
           <li><a class="footer__link" href="{{ url_for('fleet') }}">Toyota Innova Crysta</a></li>
           <li><a class="footer__link" href="{{ url_for('fleet') }}">Tempo Traveller</a></li>
