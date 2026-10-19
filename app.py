@@ -35,7 +35,7 @@ except ImportError:
 VIEW_COUNT_FILE = 'view_count.txt'
 
 def get_view_count():
-    """Read view count safely. In serverless environments like Vercel, filesystem is read-only."""
+    """Read view count safely without crashing in containerized or read-only environments."""
     count = 1240
     try:
         tmp_file = '/tmp/view_count.txt'
@@ -52,7 +52,6 @@ def get_view_count():
             except Exception:
                 pass
         count += 1
-        # Serverless writable path is /tmp
         target = tmp_file if os.path.isdir('/tmp') else VIEW_COUNT_FILE
         try:
             with open(target, 'w') as f:
@@ -69,7 +68,7 @@ def inject_global_seo():
     try:
         if request and request.host:
             host = request.host
-            if 'vercel.app' in host or 'localhost' in host:
+            if 'localhost' in host or '127.0.0.1' in host:
                 proto = request.headers.get('X-Forwarded-Proto', request.scheme)
                 site_url = f"{proto}://{host}".rstrip('/')
     except Exception:
