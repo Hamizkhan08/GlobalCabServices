@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found (404) | Global Cab Services Nashik</title>
-  <meta name="robots" content="noindex, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+  <meta name="robots" content="noindex, follow" />  <!-- Preload primary heading webfont (Self-hosted woff2, 7KB) -->
+  <link rel="preload" href="{{ url_for('static', filename='fonts/poppins-600.woff2') }}" as="font" type="font/woff2" crossorigin />
+
+  <!-- Complete Site Stylesheet (Minified, cached 1 year) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.min.css') }}" />
+
+  <!-- Local Self-Hosted Font Awesome (Non-render-blocking) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" /></noscript>
 </head>
 <body style="min-height:100vh;display:flex;flex-direction:column;background:var(--clr-dark);color:#fff;">
 

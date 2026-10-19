@@ -22,14 +22,15 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact Global Cab Services | Nashik Taxi Booking" />
   <meta name="twitter:description" content="Contact Global Cab Services in Nashik, Maharashtra. Call +91 9881598109 or book via WhatsApp 24/7 for instant cab fares and inquiries." />
-  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.webp') }}" />  <!-- Preload primary heading webfont (Self-hosted woff2, 7KB) -->
+  <link rel="preload" href="{{ url_for('static', filename='fonts/poppins-600.woff2') }}" as="font" type="font/woff2" crossorigin />
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+  <!-- Complete Site Stylesheet (Minified, cached 1 year) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.min.css') }}" />
+
+  <!-- Local Self-Hosted Font Awesome (Non-render-blocking) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" /></noscript>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -368,7 +369,11 @@
 <!-- FOOTER (ANIMATED VIDEO BACKGROUND) -->
 <footer class="footer footer--video" role="contentinfo" aria-label="Site footer">
   <div class="footer__video-bg" aria-hidden="true">
-    <img class="footer__video-img" src="{{ url_for('static', filename='images/cab.gif') }}" alt="Global Cab Services cars travelling" />
+    <video class="footer__video-img" autoplay loop muted playsinline poster="{{ url_for('static', filename='images/cab_poster.webp') }}" aria-label="Global Cab Services cars travelling">
+      <source src="{{ url_for('static', filename='images/cab.webm') }}" type="video/webm" />
+      <source src="{{ url_for('static', filename='images/cab.mp4') }}" type="video/mp4" />
+      <img class="footer__video-img" src="{{ url_for('static', filename='images/cab.gif') }}" alt="Global Cab Services cars travelling" loading="lazy" />
+    </video>
     <div class="footer__video-overlay"></div>
   </div>
   <div class="container footer__content">

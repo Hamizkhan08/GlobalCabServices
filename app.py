@@ -26,7 +26,7 @@ def add_security_headers(response):
     # Aggressive caching for static assets (images, CSS, JS, fonts)
     if request.path.startswith('/static/'):
         ext = request.path.rsplit('.', 1)[-1].lower()
-        if ext in ('webp', 'gif', 'jpg', 'jpeg', 'png', 'svg', 'ico', 'woff', 'woff2', 'ttf'):
+        if ext in ('webp', 'gif', 'jpg', 'jpeg', 'png', 'svg', 'ico', 'woff', 'woff2', 'ttf', 'mp4', 'webm'):
             response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
         elif ext in ('css', 'js'):
             response.headers['Cache-Control'] = 'public, max-age=86400, stale-while-revalidate=604800'
