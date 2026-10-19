@@ -26,11 +26,11 @@
   <link rel="preload" href="{{ url_for('static', filename='fonts/poppins-600.woff2') }}" as="font" type="font/woff2" crossorigin />
 
   <!-- Complete Site Stylesheet (Minified, cached 1 year) -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.min.css', v='2.2') }}" />
 
   <!-- Local Self-Hosted Font Awesome (Non-render-blocking) -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}" /></noscript>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css', v='2.2') }}" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css', v='2.2') }}" /></noscript>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -102,10 +102,10 @@
   </nav>
 
   <!-- Mobile Drawer Backdrop -->
-  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true" style="position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:9998;opacity:0;visibility:hidden;pointer-events:none;"></div>
 
   <!-- Mobile Slide-In Drawer -->
-  <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true" style="position:fixed;top:0;left:0;bottom:0;width:min(320px,86vw);transform:translateX(-100%);">
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
         <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="45" height="36" style="border-radius:6px;object-fit:contain;" />
@@ -309,7 +309,7 @@
   </a>
 </div>
 
-<script src="{{ url_for('static', filename='js/galaxy.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/galaxy.js', v='2.2') }}" defer></script>
 </body>
 </html>
 

@@ -23,13 +23,21 @@ def add_security_headers(response):
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains; preload'
     response.headers['X-Content-Type-Options'] = 'nosniff'
     response.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    # Aggressive caching for static assets (images, CSS, JS, fonts)
+    # Optimized caching for static assets (images, CSS, JS, fonts)
     if request.path.startswith('/static/'):
         ext = request.path.rsplit('.', 1)[-1].lower()
+        # Media, fonts, and images are content-addressed -> 1-year immutable
         if ext in ('webp', 'gif', 'jpg', 'jpeg', 'png', 'svg', 'ico', 'woff', 'woff2', 'ttf', 'mp4', 'webm'):
             response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
         elif ext in ('css', 'js'):
-            response.headers['Cache-Control'] = 'public, max-age=86400, stale-while-revalidate=604800'
+            # Versioned assets via ?v= get 1-year immutable cache; unversioned get 7 days
+            if request.args.get('v'):
+                response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+            else:
+                response.headers['Cache-Control'] = 'public, max-age=604800, stale-while-revalidate=86400'
+    else:
+        # HTML pages are validated so new deployments and bumped ?v= versions update instantly
+        response.headers['Cache-Control'] = 'public, max-age=0, must-revalidate'
     return response
 
 # Optional Twilio configuration (SMS/WhatsApp) - only used if credentials are set
