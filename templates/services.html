@@ -98,7 +98,7 @@
     <div class="container">
       <div class="navbar__inner">
         <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
-          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services - Cab Service in Nashik" width="40" height="40" />
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services - Cab Service in Nashik" width="50" height="40" />
           <div class="navbar__logo-wrap">
             <span class="navbar__logo-name">Global Cab Services</span>
             <span class="navbar__logo-tag">Nashik, Maharashtra</span>
@@ -133,7 +133,7 @@
   <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="45" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -213,7 +213,11 @@
         <!-- Service 1: Local Rentals -->
         <article class="svc-card" role="listitem">
           <div class="svc-card__img-wrap">
-            <img class="svc-card__img" src="{{ url_for('static', filename='images/city.gif') }}" alt="Local taxi service in Nashik - 8 hours 80 km car rental" loading="lazy" />
+            <video class="svc-card__img" autoplay loop muted playsinline poster="{{ url_for('static', filename='images/city_poster.webp') }}" width="672" height="378" aria-label="Local taxi service in Nashik - 8 hours 80 km car rental">
+              <source src="{{ url_for('static', filename='images/city.webm') }}" type="video/webm" />
+              <source src="{{ url_for('static', filename='images/city.mp4') }}" type="video/mp4" />
+              <img class="svc-card__img" src="{{ url_for('static', filename='images/city.gif') }}" alt="Local taxi service in Nashik - 8 hours 80 km car rental" width="672" height="378" loading="lazy" />
+            </video>
             <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
           </div>
           <div class="svc-card__body">
@@ -233,7 +237,11 @@
         <!-- Service 2: Airport Transfers -->
         <article class="svc-card" role="listitem">
           <div class="svc-card__img-wrap">
-            <img class="svc-card__img" src="{{ url_for('static', filename='images/airport.gif') }}" alt="Nashik to Mumbai airport cab transfer service" loading="lazy" />
+            <video class="svc-card__img" autoplay loop muted playsinline poster="{{ url_for('static', filename='images/airport_poster.webp') }}" width="672" height="378" aria-label="Nashik to Mumbai airport cab transfer service">
+              <source src="{{ url_for('static', filename='images/airport.webm') }}" type="video/webm" />
+              <source src="{{ url_for('static', filename='images/airport.mp4') }}" type="video/mp4" />
+              <img class="svc-card__img" src="{{ url_for('static', filename='images/airport.gif') }}" alt="Nashik to Mumbai airport cab transfer service" width="672" height="378" loading="lazy" />
+            </video>
             <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-plane-departure"></i></div>
           </div>
           <div class="svc-card__body">
@@ -253,7 +261,7 @@
         <!-- Service 3: Round Trips -->
         <article class="svc-card" role="listitem">
           <div class="svc-card__img-wrap">
-            <img class="svc-card__img" src="{{ url_for('static', filename='images/round_trip.webp') }}" alt="Round trip outstation taxi from Nashik to Shirdi and Pune" loading="lazy" />
+            <img class="svc-card__img" src="{{ url_for('static', filename='images/round_trip.webp') }}" srcset="{{ url_for('static', filename='images/round_trip-400w.webp') }} 400w, {{ url_for('static', filename='images/round_trip.webp') }} 672w" sizes="(max-width: 600px) 100vw, 360px" alt="Round trip outstation taxi from Nashik to Shirdi and Pune" width="672" height="378" loading="lazy" />
             <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-rotate"></i></div>
           </div>
           <div class="svc-card__body">
@@ -273,7 +281,7 @@
         <!-- Service 4: One-Way Cabs -->
         <article class="svc-card" role="listitem">
           <div class="svc-card__img-wrap">
-            <img class="svc-card__img" src="{{ url_for('static', filename='images/oneway.webp') }}" alt="One way cab service from Nashik to Mumbai and Pune" loading="lazy" />
+            <img class="svc-card__img" src="{{ url_for('static', filename='images/oneway.webp') }}" srcset="{{ url_for('static', filename='images/oneway-400w.webp') }} 400w, {{ url_for('static', filename='images/oneway.webp') }} 672w" sizes="(max-width: 600px) 100vw, 360px" alt="One way cab service from Nashik to Mumbai and Pune" width="672" height="378" loading="lazy" />
             <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
           </div>
           <div class="svc-card__body">

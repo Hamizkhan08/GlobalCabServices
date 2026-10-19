@@ -156,7 +156,7 @@ button { cursor: pointer; }
 .svc-card { background: var(--clr-white); border-radius: var(--r-lg); box-shadow: var(--sh-card); border: 1px solid var(--clr-border); overflow: hidden; transition: transform var(--tr), box-shadow var(--tr); display: flex; flex-direction: column; }
 .svc-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
 .svc-card__img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--clr-off-white); }
-.svc-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--tr-slow); }
+.svc-card__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--tr-slow); }
 .svc-card:hover .svc-card__img { transform: scale(1.05); }
 .svc-card__icon { position: absolute; top: 1rem; left: 1rem; width: 42px; height: 42px; background: rgba(201,168,76,.92); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; }
 .svc-card__icon i { color: var(--clr-dark); font-size: 1.1rem; }

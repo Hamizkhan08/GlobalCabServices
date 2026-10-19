@@ -143,7 +143,7 @@
       <div class="navbar__inner">
         <!-- Logo -->
         <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
-          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="40" height="40" />
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Logo" width="50" height="40" />
           <div class="navbar__logo-wrap">
             <span class="navbar__logo-name">Global Cab Services</span>
             <span class="navbar__logo-tag">Nashik, Maharashtra</span>
@@ -183,7 +183,7 @@
     <!-- Drawer Header -->
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Nashik cab booking logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.webp') }}" alt="Global Cab Services Nashik cab booking logo" width="45" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -291,7 +291,11 @@
       <!-- Service 1: Local Rentals -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/city.gif') }}" alt="Local sightseeing cab in Nashik" loading="lazy" />
+          <video class="svc-card__img" autoplay loop muted playsinline poster="{{ url_for('static', filename='images/city_poster.webp') }}" width="672" height="378" aria-label="Local sightseeing cab in Nashik">
+            <source src="{{ url_for('static', filename='images/city.webm') }}" type="video/webm" />
+            <source src="{{ url_for('static', filename='images/city.mp4') }}" type="video/mp4" />
+            <img class="svc-card__img" src="{{ url_for('static', filename='images/city.gif') }}" alt="Local sightseeing cab in Nashik" width="672" height="378" loading="lazy" />
+          </video>
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
         </div>
         <div class="svc-card__body">
@@ -309,7 +313,11 @@
       <!-- Service 2: Airport Cab -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/airport.gif') }}" alt="Airport cab transfer service" loading="lazy" />
+          <video class="svc-card__img" autoplay loop muted playsinline poster="{{ url_for('static', filename='images/airport_poster.webp') }}" width="672" height="378" aria-label="Airport cab transfer service">
+            <source src="{{ url_for('static', filename='images/airport.webm') }}" type="video/webm" />
+            <source src="{{ url_for('static', filename='images/airport.mp4') }}" type="video/mp4" />
+            <img class="svc-card__img" src="{{ url_for('static', filename='images/airport.gif') }}" alt="Airport cab transfer service" width="672" height="378" loading="lazy" />
+          </video>
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-plane-departure"></i></div>
         </div>
         <div class="svc-card__body">
@@ -327,7 +335,7 @@
       <!-- Service 3: Round Trips -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/round_trip.webp') }}" alt="Round trip outstation cab Nashik to Shirdi and Pune" loading="lazy" />
+          <img class="svc-card__img" src="{{ url_for('static', filename='images/round_trip.webp') }}" srcset="{{ url_for('static', filename='images/round_trip-400w.webp') }} 400w, {{ url_for('static', filename='images/round_trip.webp') }} 672w" sizes="(max-width: 600px) 100vw, 360px" alt="Round trip outstation cab Nashik to Shirdi and Pune" width="672" height="378" loading="lazy" />
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-rotate"></i></div>
         </div>
         <div class="svc-card__body">
@@ -345,7 +353,7 @@
       <!-- Service 4: One-Way -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/oneway.webp') }}" alt="One-way cab service Nashik to Mumbai and Pune" loading="lazy" />
+          <img class="svc-card__img" src="{{ url_for('static', filename='images/oneway.webp') }}" srcset="{{ url_for('static', filename='images/oneway-400w.webp') }} 400w, {{ url_for('static', filename='images/oneway.webp') }} 672w" sizes="(max-width: 600px) 100vw, 360px" alt="One-way cab service Nashik to Mumbai and Pune" width="672" height="378" loading="lazy" />
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
         </div>
         <div class="svc-card__body">
@@ -363,7 +371,7 @@
       <!-- Service 5: Executive Class -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.webp') }}" alt="Executive class cab for corporate travel" loading="lazy" />
+          <img class="svc-card__img" src="{{ url_for('static', filename='images/hondacity.webp') }}" alt="Executive class cab for corporate travel" width="672" height="378" loading="lazy" />
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
         </div>
         <div class="svc-card__body">
@@ -381,7 +389,7 @@
       <!-- Service 6: Customized Tours -->
       <article class="svc-card" role="listitem">
         <div class="svc-card__img-wrap">
-          <img class="svc-card__img" src="{{ url_for('static', filename='images/h2.webp') }}" alt="Customized multi-city tour package" loading="lazy" />
+          <img class="svc-card__img" src="{{ url_for('static', filename='images/h2.webp') }}" srcset="{{ url_for('static', filename='images/h2-400w.webp') }} 400w, {{ url_for('static', filename='images/h2.webp') }} 672w" sizes="(max-width: 600px) 100vw, 360px" alt="Customized multi-city tour package" width="672" height="378" loading="lazy" />
           <div class="svc-card__icon" aria-hidden="true"><i class="fa-solid fa-route"></i></div>
         </div>
         <div class="svc-card__body">
