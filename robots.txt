@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /scratch/
+
+# Sitemap location
+Sitemap: https://globalcabservices.com/sitemap.xml

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sedan, Ertiga &amp; Innova Crysta Rentals in Nashik | Global Cab Services</title>
+  <meta name="description" content="Rent Hyundai Aura, Honda City, Maruti Ertiga, Toyota Innova Crysta, Tempo Traveller and Tata Winger cabs in Nashik. Clean, AC vehicles for local and outstation travel." />
+  <meta name="keywords" content="sedan car rental Nashik, Ertiga rental Nashik, Toyota Innova Crysta rental Nashik, Tempo Traveller rental Nashik, Tata Winger rental Nashik, cab fleet Nashik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="{{ site_url }}/fleet" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sedan, Ertiga &amp; Innova Crysta Rentals in Nashik | Global Cab Services" />
+  <meta property="og:description" content="Rent Hyundai Aura, Honda City, Maruti Ertiga, Toyota Innova Crysta, Tempo Traveller and Tata Winger cabs in Nashik. Clean, AC vehicles for local and outstation travel." />
+  <meta property="og:url" content="{{ site_url }}/fleet" />
+  <meta property="og:site_name" content="Global Cab Services" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/crysta.jpg') }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sedan, Ertiga &amp; Innova Crysta Rentals in Nashik | Global Cab Services" />
+  <meta name="twitter:description" content="Rent Hyundai Aura, Honda City, Maruti Ertiga, Toyota Innova Crysta, Tempo Traveller and Tata Winger cabs in Nashik. Clean, AC vehicles for local and outstation travel." />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/crysta.jpg') }}" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site_url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Our Fleet",
+            "item": "{{ site_url }}/fleet"
+          }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Global Cab Services Fleet",
+        "telephone": "+919881598109",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nashik",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="main-navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="40" height="40" />
+          <div class="navbar__logo-wrap">
+            <span class="navbar__logo-name">Global Cab Services</span>
+            <span class="navbar__logo-tag">Nashik, Maharashtra</span>
+          </div>
+        </a>
+        <nav class="navbar__nav" aria-label="Desktop navigation">
+          <a class="navbar__link" href="{{ url_for('index') }}">Home</a>
+          <a class="navbar__link" href="{{ url_for('services') }}">Services</a>
+          <a class="navbar__link" href="{{ url_for('fleet') }}">Our Fleet</a>
+          <a class="navbar__link" href="{{ url_for('about') }}">About</a>
+          <a class="navbar__link" href="{{ url_for('index') }}#reviews">Reviews</a>
+          <a class="navbar__link" href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+        <div class="navbar__actions">
+          <a class="btn btn--primary btn--sm btn--pill" href="{{ url_for('online_booking') }}">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Online
+          </a>
+          <button class="navbar__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="navbar__bar"></span>
+            <span class="navbar__bar"></span>
+            <span class="navbar__bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Slide-In Drawer -->
+  <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <div class="mobile-drawer__header">
+      <div class="mobile-drawer__brand">
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <div class="mobile-drawer__brand-wrap">
+          <span class="mobile-drawer__brand-name">Global Cab Services</span>
+          <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
+        </div>
+      </div>
+      <button class="mobile-drawer__close" id="drawer-close" aria-label="Close navigation">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="mobile-drawer__links">
+      <a class="mobile-drawer__link" href="{{ url_for('index') }}"><i class="fa-solid fa-house"></i> Home</a>
+      <a class="mobile-drawer__link" href="{{ url_for('services') }}"><i class="fa-solid fa-car"></i> Services</a>
+      <a class="mobile-drawer__link" href="{{ url_for('fleet') }}"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
+      <a class="mobile-drawer__link" href="{{ url_for('about') }}"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a class="mobile-drawer__link" href="{{ url_for('index') }}#reviews"><i class="fa-solid fa-comments"></i> Reviews</a>
+      <a class="mobile-drawer__link" href="{{ url_for('online_booking') }}"><i class="fa-solid fa-calendar-check"></i> Book Online</a>
+      <a class="mobile-drawer__link" href="{{ url_for('contact') }}"><i class="fa-solid fa-location-dot"></i> Contact</a>
+    </div>
+    <div class="mobile-drawer__cta">
+      <a class="btn btn--whatsapp btn--full btn--lg" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+      </a>
+      <a class="btn btn--gold btn--full" href="tel:+919881598109">
+        <i class="fa-solid fa-phone"></i> Call Now (+91 9881598109)
+      </a>
+    </div>
+    <div class="mobile-drawer__contacts">
+      <a class="mobile-drawer__contact-link" href="tel:+919881598109">
+        <i class="fa-solid fa-phone"></i> +91 9881598109 (24/7)
+      </a>
+      <a class="mobile-drawer__contact-link" href="tel:+917020858192">
+        <i class="fa-solid fa-phone"></i> +91 7020858192
+      </a>
+      <a class="mobile-drawer__contact-link" href="mailto:khanafzal0404@gmail.com">
+        <i class="fa-solid fa-envelope"></i> khanafzal0404@gmail.com
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="position:relative;padding:7.5rem 0 3.5rem;background:#0d111c;color:#fff;text-align:center;">
+    <div class="page-hero__bg" style="position:absolute;inset:0;background-image:url('{{ url_for('static', filename='images/herocab.jpeg') }}');background-size:cover;background-position:center;opacity:0.22;"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <span class="sec-eyebrow" style="color:var(--clr-gold);">MODERN &amp; SANITIZED VEHICLES</span>
+      <h1 class="page-hero__title" style="font-size:clamp(1.8rem,4.5vw,2.75rem);font-weight:800;margin-bottom:1rem;color:#fff;">
+        Sedan, SUV &amp; Tempo Traveller Rentals in Nashik
+      </h1>
+      <p class="page-hero__sub" style="font-size:1.05rem;color:rgba(255,255,255,.8);max-width:640px;margin-inline:auto;">
+        Choose from economy sedans, premium family MPVs, luxury SUVs, and spacious group minibuses. Every vehicle is GPS-enabled, air-conditioned, and maintained to the highest hygiene standards.
+      </p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <div style="background:var(--clr-off-white);padding:.75rem 0;border-bottom:1px solid var(--clr-border);">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol style="list-style:none;display:flex;gap:.5rem;margin:0;padding:0;font-size:.85rem;color:var(--clr-text-lt);">
+          <li><a href="{{ url_for('index') }}" style="color:var(--clr-charcoal);text-decoration:none;">Home</a></li>
+          <li><span>&rsaquo;</span></li>
+          <li style="color:var(--clr-gold-dk);font-weight:600;" aria-current="page">Our Fleet</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- FLEET SHOWCASE -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-header sec-header--center">
+        <span class="sec-eyebrow">CHOOSE YOUR RIDE</span>
+        <h2 class="sec-title">Vehicles for Every Travel Need</h2>
+        <p class="sec-sub">Whether traveling solo on business or planning a 25-member family pilgrimage to Shirdi, we have the right vehicle ready.</p>
+      </div>
+
+      <div class="fleet-grid" role="list">
+
+        <!-- Vehicle 1: Hyundai Aura -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/aura.webp') }}" alt="Hyundai Aura sedan car rental in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Sedan Class</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Hyundai Aura</h3>
+            <p class="fleet-card__cat">Budget Sedan &bull; 4+1 Seater</p>
+            <p class="fleet-card__desc">Ideal for city errands, daily office commutes, and affordable outstation one-way trips from Nashik to Mumbai and Pune. Smooth ride with generous boot space.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> Up to 4 Passengers</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Fully Air Conditioned</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 2 Large Luggage</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Verified Chauffeur</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20a%20Hyundai%20Aura%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Hyundai Aura
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vehicle 2: Honda City -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/hondacity.jpg') }}" alt="Honda City executive sedan car rental in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Premium Sedan</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Honda City</h3>
+            <p class="fleet-card__cat">Executive Sedan &bull; 4+1 Seater</p>
+            <p class="fleet-card__desc">Top pick for corporate executives, client airport pickups, and comfortable highway long drives. Premium suspension and plush legroom.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> Up to 4 Passengers</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Climate Control AC</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3 Large Luggage</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Professional Driver</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20a%20Honda%20City%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Honda City
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vehicle 3: Maruti Suzuki Ertiga -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/ertiga.webp') }}" alt="Maruti Suzuki Ertiga 7 seater taxi rental in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Most Popular SUV</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Maruti Suzuki Ertiga</h3>
+            <p class="fleet-card__cat">Family MPV &bull; 6+1 Seater</p>
+            <p class="fleet-card__desc">The undisputed family favorite for outstation tours to Shirdi, Trimbakeshwar, and Pune. Economical pricing with ample headroom and flexible luggage room.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> Up to 6-7 Passengers</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Dual AC Vents</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3-4 Luggage Bags</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Experienced Driver</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20a%20Maruti%20Ertiga%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Maruti Ertiga
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vehicle 4: Toyota Innova Crysta -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/crysta.jpg') }}" alt="Toyota Innova Crysta luxury SUV cab hire in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Luxury SUV</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Toyota Innova Crysta</h3>
+            <p class="fleet-card__cat">Luxury SUV &bull; 7+1 Seater</p>
+            <p class="fleet-card__desc">Unmatched comfort, captain seats, and superior ride dynamics for long-distance Maharashtra tours, wedding events, and corporate delegations.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> Up to 7 Passengers</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Tri-Zone Powerful AC</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 4 Large Luggage</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Top-Rated Chauffeur</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20an%20Innova%20Crysta%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Innova Crysta
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vehicle 5: Tempo Traveller -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/tempo_traveller.jpg') }}" alt="Tempo Traveller 17 and 26 seater rental in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Group Travel</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Tempo Traveller</h3>
+            <p class="fleet-card__cat">Group Minibus &bull; 17 / 20 / 26 Seater</p>
+            <p class="fleet-card__desc">Engineered for large family get-togethers, school tours, and pilgrimage groups to Shirdi, Bhimashankar, and Saptashrungi. Pushback seats and push luggage rack.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> 17 to 26 Seats</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Heavy-Duty AC</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> Dedicated Carrier</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Highway Expert Driver</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20a%20Tempo%20Traveller%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Tempo Traveller
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vehicle 6: Tata Winger -->
+        <article class="fleet-card" role="listitem">
+          <div class="fleet-card__img-wrap">
+            <img class="fleet-card__img" src="{{ url_for('static', filename='images/tata_winger.jpg') }}" alt="Tata Winger group travel cab service in Nashik" loading="lazy" />
+            <span class="fleet-card__badge">Medium Group</span>
+          </div>
+          <div class="fleet-card__body">
+            <h3 class="fleet-card__name">Tata Winger</h3>
+            <p class="fleet-card__cat">Passenger Van &bull; 9 to 15 Seater</p>
+            <p class="fleet-card__desc">A versatile option between an SUV and a minibus. Individual reclining seats, generous legroom, and high headroom for mid-size group trips.</p>
+            <div class="fleet-card__specs">
+              <span class="fleet-spec"><i class="fa-solid fa-users"></i> 9 to 15 Seats</span>
+              <span class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Individual AC Vents</span>
+              <span class="fleet-spec"><i class="fa-solid fa-suitcase"></i> Rear Luggage Space</span>
+              <span class="fleet-spec"><i class="fa-solid fa-shield-halved"></i> Courteous Chauffeur</span>
+            </div>
+            <div class="fleet-card__footer">
+              <a class="btn btn--whatsapp btn--full" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20book%20a%20Tata%20Winger%20in%20Nashik." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Book Tata Winger
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (ANIMATED VIDEO BACKGROUND) -->
+<footer class="footer footer--video" role="contentinfo" aria-label="Site footer">
+  <div class="footer__video-bg" aria-hidden="true">
+    <img class="footer__video-img" src="{{ url_for('static', filename='images/cab.gif') }}" alt="Global Cab Services cars travelling" />
+    <div class="footer__video-overlay"></div>
+  </div>
+  <div class="container footer__content">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand-name">Global Cab Services</p>
+        <p class="footer__brand-tag">Nashik's Trusted Cab Service</p>
+        <p class="footer__brand-desc">Reliable pick-up and drop services across Nashik, Mumbai, Pune, Shirdi and all of Maharashtra. Professional drivers, clean vehicles, transparent fares.</p>
+        <a class="footer__ci" href="tel:+919881598109"><i class="fa-solid fa-phone"></i> +91 9881598109</a>
+        <a class="footer__ci" href="tel:+917020858192"><i class="fa-solid fa-phone"></i> +91 7020858192</a>
+        <a class="footer__ci" href="mailto:khanafzal0404@gmail.com"><i class="fa-solid fa-envelope"></i> khanafzal0404@gmail.com</a>
+      </div>
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="{{ url_for('services') }}">Local Rentals</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Airport Transfer</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Round Trips</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">One-Way Cabs</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Executive Class</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Our Fleet</p>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Hyundai Aura (Sedan)</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Maruti Suzuki Ertiga</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Toyota Innova Crysta</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tempo Traveller</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tata Winger</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Top Routes</p>
+        <div class="routes-wrap">
+          <span class="route-badge">Nashik &rarr; Mumbai</span>
+          <span class="route-badge">Nashik &rarr; Shirdi</span>
+          <span class="route-badge">Nashik &rarr; Pune</span>
+          <span class="route-badge">Mumbai &rarr; Nashik</span>
+          <span class="route-badge">Nashik &rarr; Aurangabad</span>
+          <span class="route-badge">Nashik &rarr; Surat</span>
+          <span class="route-badge">Nashik &rarr; Trimbakeshwar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; {{ current_year }} Global Cab Services, Nashik. All rights reserved.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="footer__link" href="{{ google_reviews_url }}" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+        <a class="footer__link" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="footer__link" href="{{ url_for('contact') }}">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Action Buttons -->
+<div class="float-actions" role="group" aria-label="Quick contact buttons">
+  <a class="float-btn float-btn--phone" href="tel:+919881598109" aria-label="Call Global Cab Services" id="float-phone-btn">
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+    <span class="float-btn__tooltip">Call Now</span>
+  </a>
+  <a class="float-btn float-btn--wa" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20enquire%20about%20a%20cab." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Global Cab Services" id="float-wa-btn">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="float-btn__tooltip">WhatsApp</span>
+  </a>
+</div>
+
+<script src="{{ url_for('static', filename='js/galaxy.js') }}"></script>
+</body>
+</html>

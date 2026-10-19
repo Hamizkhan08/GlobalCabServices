@@ -3,13 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Cab Services | Best Cab Service in Nashik &ndash; Airport, Outstation &amp; Local Rides</title>
-  <meta name="description" content="Global Cab Services &ndash; Nashik's trusted cab service for airport transfers, outstation trips, local rides and corporate travel to Mumbai, Pune, Shirdi &amp; across Maharashtra. Book via WhatsApp." />
-  <meta name="keywords" content="cab service in Nashik, Nashik &rarr; Shirdi taxi, outstation cab Nashik, Global Cab Services" />
-  <meta property="og:title" content="Global Cab Services | Nashik's Trusted Cab Service" />
-  <meta property="og:description" content="Reliable cab service in Nashik for airport, outstation and local trips. Book instantly via WhatsApp." />
+  <title>Global Cab Services | Cab &amp; Taxi Service in Nashik</title>
+  <meta name="description" content="Looking for a cab service in Nashik? Explore sedan cars, Ertiga, Innova Crysta, Tempo Traveller and Winger for local travel, airport transfers and outstation trips with Global Cab Services." />
+  <meta name="keywords" content="cab service in Nashik, taxi service in Nashik, Nashik cab booking, car rental in Nashik, cab booking Nashik, taxi booking Nashik, local taxi service Nashik, outstation cab service Nashik, Nashik to Mumbai cab, Nashik to Pune cab, Nashik to Shirdi taxi" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="{{ site_url }}/" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="/" />
+  <meta property="og:title" content="Global Cab Services | Cab &amp; Taxi Service in Nashik" />
+  <meta property="og:description" content="Looking for a cab service in Nashik? Explore sedan cars, Ertiga, Innova Crysta, Tempo Traveller and Winger for local travel, airport transfers and outstation trips with Global Cab Services." />
+  <meta property="og:url" content="{{ site_url }}/" />
+  <meta property="og:site_name" content="Global Cab Services" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+  <meta property="og:image:alt" content="Global Cab Services Fleet in Nashik" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Global Cab Services | Cab &amp; Taxi Service in Nashik" />
+  <meta name="twitter:description" content="Looking for a cab service in Nashik? Explore sedan cars, Ertiga, Innova Crysta, Tempo Traveller and Winger for local travel, airport transfers and outstation trips with Global Cab Services." />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +35,95 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+
+  <!-- JSON-LD Structured Data: TaxiService, LocalBusiness & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["TaxiService", "LocalBusiness"],
+        "@id": "{{ site_url }}/#business",
+        "name": "Global Cab Services",
+        "alternateName": "Global Cab Services Nashik",
+        "url": "{{ site_url }}/",
+        "logo": "{{ site_url }}{{ url_for('static', filename='images/logo1.png') }}",
+        "image": "{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}",
+        "description": "Premier cab service and car rental in Nashik. Providing 24/7 airport transfers, outstation one-way and round trips, local hourly rentals, and corporate travel across Maharashtra.",
+        "telephone": "+919881598109",
+        "email": "khanafzal0404@gmail.com",
+        "priceRange": "₹₹",
+        "paymentAccepted": "Cash, UPI, Online Transfer",
+        "currenciesAccepted": "INR",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nashik",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Nashik"},
+          {"@type": "City", "name": "Mumbai"},
+          {"@type": "City", "name": "Pune"},
+          {"@type": "City", "name": "Shirdi"},
+          {"@type": "City", "name": "Trimbakeshwar"},
+          {"@type": "City", "name": "Bhimashankar"},
+          {"@type": "City", "name": "Aurangabad"},
+          {"@type": "City", "name": "Surat"},
+          {"@type": "AdministrativeArea", "name": "Maharashtra"}
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://g.page/r/Cd-LLnOEWd0wEBE/review",
+          "https://wa.me/919881598109"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "{{ site_url }}/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How can I book a cab with Global Cab Services in Nashik?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can book directly via WhatsApp at +91 9881598109 or call our 24/7 hotline. You can also fill the booking inquiry form on our website to receive an instant fare quote and availability confirmation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer one-way cabs from Nashik to Mumbai and Pune?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we specialize in affordable one-way outstation cabs from Nashik to Mumbai, Pune, Shirdi, Surat, and Mumbai International Airport (CSMIA) with no return fare charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What vehicles are available in your fleet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our sanitized, AC fleet includes Hyundai Aura sedans, Honda City executive sedans, Maruti Suzuki Ertiga (7-seater MPV), Toyota Innova Crysta luxury SUVs, and 17 to 26-seater Tempo Travellers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are airport transfers available round the clock?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our airport pickup and drop services operate 24 hours a day, 7 days a week, ensuring on-time arrival for early morning and late night flights at Mumbai and Pune airports."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -40,12 +143,12 @@
 
         <!-- Desktop Nav -->
         <nav class="navbar__nav" aria-label="Desktop navigation">
-          <a class="navbar__link" href="#hero">Home</a>
-          <a class="navbar__link" href="#services">Services</a>
-          <a class="navbar__link" href="#fleet">Our Fleet</a>
-          <a class="navbar__link" href="#why-choose">Why Choose Us</a>
+          <a class="navbar__link" href="{{ url_for('index') }}">Home</a>
+          <a class="navbar__link" href="{{ url_for('services') }}">Services</a>
+          <a class="navbar__link" href="{{ url_for('fleet') }}">Our Fleet</a>
+          <a class="navbar__link" href="{{ url_for('about') }}">About</a>
           <a class="navbar__link" href="#reviews">Reviews</a>
-          <a class="navbar__link" href="#contact">Contact</a>
+          <a class="navbar__link" href="{{ url_for('contact') }}">Contact</a>
         </nav>
 
         <!-- Actions -->
@@ -71,7 +174,7 @@
     <!-- Drawer Header -->
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Nashik cab booking logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -84,13 +187,13 @@
 
     <!-- Nav Links -->
     <div class="mobile-drawer__links">
-      <a class="mobile-drawer__link" href="#hero"><i class="fa-solid fa-house"></i> Home</a>
-      <a class="mobile-drawer__link" href="#services"><i class="fa-solid fa-car"></i> Services</a>
-      <a class="mobile-drawer__link" href="#fleet"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
-      <a class="mobile-drawer__link" href="#why-choose"><i class="fa-solid fa-star"></i> Why Choose Us</a>
+      <a class="mobile-drawer__link" href="{{ url_for('index') }}"><i class="fa-solid fa-house"></i> Home</a>
+      <a class="mobile-drawer__link" href="{{ url_for('services') }}"><i class="fa-solid fa-car"></i> Services</a>
+      <a class="mobile-drawer__link" href="{{ url_for('fleet') }}"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
+      <a class="mobile-drawer__link" href="{{ url_for('about') }}"><i class="fa-solid fa-circle-info"></i> About Us</a>
       <a class="mobile-drawer__link" href="#reviews"><i class="fa-solid fa-comments"></i> Reviews</a>
-      <a class="mobile-drawer__link" href="#booking"><i class="fa-solid fa-calendar-check"></i> Book a Cab</a>
-      <a class="mobile-drawer__link" href="#contact"><i class="fa-solid fa-location-dot"></i> Contact</a>
+      <a class="mobile-drawer__link" href="{{ url_for('online_booking') }}"><i class="fa-solid fa-calendar-check"></i> Book Online</a>
+      <a class="mobile-drawer__link" href="{{ url_for('contact') }}"><i class="fa-solid fa-location-dot"></i> Contact</a>
     </div>
 
     <!-- CTA Buttons -->
@@ -137,7 +240,7 @@
 <section class="hero" id="hero" aria-label="Hero section">
   <!-- Video background with gif fallback -->
   <div class="hero__video-wrap" aria-hidden="true">
-    <img class="hero__video-fallback" src="{{ url_for('static', filename='images/herocab.jpeg') }}" alt="" />
+    <img class="hero__video-fallback" src="{{ url_for('static', filename='images/herocab.jpeg') }}" alt="Global Cab Services fleet cars on road in Nashik" />
     <div class="hero__video-overlay"></div>
   </div>
   <div class="hero__overlay" aria-hidden="true"></div>
@@ -148,7 +251,7 @@
         Nashik &bull; Maharashtra &bull; All India
       </div>
       <h1 class="hero__title">
-        Nashik's Most <span class="accent">Trusted</span><br>Cab Service
+        Cab Service in Nashik for <span class="accent">Local, Airport &amp; Outstation Travel</span>
       </h1>
       <p class="hero__desc">
         Reliable pick-up &amp; drop services across Nashik, Mumbai, Pune, Shirdi and all of Maharashtra. Professional drivers, clean vehicles, transparent pricing.
@@ -819,12 +922,12 @@
       <div>
         <p class="footer__col-title">Services</p>
         <ul class="footer__links">
-          <li><a class="footer__link" href="#services">Local Rentals</a></li>
-          <li><a class="footer__link" href="#services">Airport Transfer</a></li>
-          <li><a class="footer__link" href="#services">Round Trips</a></li>
-          <li><a class="footer__link" href="#services">One-Way Cabs</a></li>
-          <li><a class="footer__link" href="#services">Executive Class</a></li>
-          <li><a class="footer__link" href="#services">Customized Tours</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Local Rentals</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Airport Transfer</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Round Trips</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">One-Way Cabs</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Executive Class</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Customized Tours</a></li>
         </ul>
       </div>
 
@@ -832,12 +935,12 @@
       <div>
         <p class="footer__col-title">Our Fleet</p>
         <ul class="footer__links">
-          <li><a class="footer__link" href="#fleet">Hyundai Aura (Sedan)</a></li>
-          <li><a class="footer__link" href="#fleet">Honda City (Sedan)</a></li>
-          <li><a class="footer__link" href="#fleet">Maruti Suzuki Ertiga</a></li>
-          <li><a class="footer__link" href="#fleet">Toyota Innova Crysta</a></li>
-          <li><a class="footer__link" href="#fleet">Tempo Traveller</a></li>
-          <li><a class="footer__link" href="#fleet">Tata Winger</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Hyundai Aura (Sedan)</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Honda City (Sedan)</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Maruti Suzuki Ertiga</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Toyota Innova Crysta</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tempo Traveller</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tata Winger</a></li>
         </ul>
       </div>
 

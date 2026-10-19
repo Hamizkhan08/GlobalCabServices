@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found (404) | Global Cab Services Nashik</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+</head>
+<body style="min-height:100vh;display:flex;flex-direction:column;background:var(--clr-dark);color:#fff;">
+
+  <!-- Simple Header -->
+  <header style="padding:1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.08);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <a href="{{ url_for('index') }}" style="display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff;">
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="38" height="38" style="border-radius:6px;object-fit:contain;" />
+        <span style="font-size:1.15rem;font-weight:800;letter-spacing:-.01em;">Global Cab Services</span>
+      </a>
+      <a class="btn btn--whatsapp btn--sm" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Help
+      </a>
+    </div>
+  </header>
+
+  <!-- 404 Content -->
+  <main style="flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1rem;text-align:center;">
+    <div style="max-width:560px;margin:0 auto;">
+      <span style="font-size:5rem;font-weight:800;color:var(--clr-gold);line-height:1;display:block;margin-bottom:1rem;">404</span>
+      <h1 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;margin-bottom:1rem;color:#fff;">Page Not Found</h1>
+      <p style="font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:2rem;">
+        The page you are looking for might have been moved or does not exist. You can return to our homepage, explore our taxi services, or book your cab directly via call or WhatsApp.
+      </p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2.5rem;">
+        <a class="btn btn--primary btn--lg" href="{{ url_for('index') }}">
+          <i class="fa-solid fa-house"></i> Return Home
+        </a>
+        <a class="btn btn--outline-gold btn--lg" href="{{ url_for('services') }}">
+          <i class="fa-solid fa-car"></i> Our Services
+        </a>
+        <a class="btn btn--whatsapp btn--lg" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a class="btn btn--dark btn--lg" href="tel:+919881598109">
+          <i class="fa-solid fa-phone"></i> Call 24/7 Hotline
+        </a>
+      </div>
+
+      <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:.875rem;">
+        <a href="{{ url_for('fleet') }}" style="color:var(--clr-gold);text-decoration:none;">Our Fleet</a>
+        <a href="{{ url_for('about') }}" style="color:var(--clr-gold);text-decoration:none;">About Us</a>
+        <a href="{{ url_for('contact') }}" style="color:var(--clr-gold);text-decoration:none;">Contact Us</a>
+        <a href="{{ url_for('online_booking') }}" style="color:var(--clr-gold);text-decoration:none;">Online Booking</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding:1.5rem 1rem;background:#080c14;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.8rem;color:rgba(255,255,255,.5);">
+    <p>&copy; {{ current_year }} Global Cab Services, Nashik. All rights reserved. 24/7 Support: +91 9881598109</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Global Cab Services | Nashik Taxi Booking</title>
+  <meta name="description" content="Contact Global Cab Services in Nashik, Maharashtra. Call +91 9881598109 or book via WhatsApp 24/7 for instant cab fares and inquiries." />
+  <meta name="keywords" content="Contact Global Cab Services, Nashik taxi booking, cab booking Nashik phone number, cab service in Nashik contact, taxi service Nashik" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="{{ site_url }}/contact" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Global Cab Services | Nashik Taxi Booking" />
+  <meta property="og:description" content="Contact Global Cab Services in Nashik, Maharashtra. Call +91 9881598109 or book via WhatsApp 24/7 for instant cab fares and inquiries." />
+  <meta property="og:url" content="{{ site_url }}/contact" />
+  <meta property="og:site_name" content="Global Cab Services" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Global Cab Services | Nashik Taxi Booking" />
+  <meta name="twitter:description" content="Contact Global Cab Services in Nashik, Maharashtra. Call +91 9881598109 or book via WhatsApp 24/7 for instant cab fares and inquiries." />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site_url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "{{ site_url }}/contact"
+          }
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "{{ site_url }}/contact#webpage",
+        "url": "{{ site_url }}/contact",
+        "name": "Contact Global Cab Services",
+        "description": "Contact Global Cab Services in Nashik for 24/7 taxi booking, airport transfers, and outstation rides."
+      },
+      {
+        "@type": "TaxiService",
+        "name": "Global Cab Services",
+        "telephone": "+919881598109",
+        "email": "khanafzal0404@gmail.com",
+        "url": "{{ site_url }}/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nashik",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://g.page/r/Cd-LLnOEWd0wEBE/review",
+          "https://wa.me/919881598109"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="main-navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a class="navbar__logo" href="{{ url_for('index') }}" aria-label="Global Cab Services Home">
+          <img class="navbar__logo-img" src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="40" height="40" />
+          <div class="navbar__logo-wrap">
+            <span class="navbar__logo-name">Global Cab Services</span>
+            <span class="navbar__logo-tag">Nashik, Maharashtra</span>
+          </div>
+        </a>
+        <nav class="navbar__nav" aria-label="Desktop navigation">
+          <a class="navbar__link" href="{{ url_for('index') }}">Home</a>
+          <a class="navbar__link" href="{{ url_for('services') }}">Services</a>
+          <a class="navbar__link" href="{{ url_for('fleet') }}">Our Fleet</a>
+          <a class="navbar__link" href="{{ url_for('about') }}">About</a>
+          <a class="navbar__link" href="{{ url_for('index') }}#reviews">Reviews</a>
+          <a class="navbar__link" href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+        <div class="navbar__actions">
+          <a class="btn btn--primary btn--sm btn--pill" href="{{ url_for('online_booking') }}">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Online
+          </a>
+          <button class="navbar__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="navbar__bar"></span>
+            <span class="navbar__bar"></span>
+            <span class="navbar__bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Slide-In Drawer -->
+  <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <div class="mobile-drawer__header">
+      <div class="mobile-drawer__brand">
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <div class="mobile-drawer__brand-wrap">
+          <span class="mobile-drawer__brand-name">Global Cab Services</span>
+          <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
+        </div>
+      </div>
+      <button class="mobile-drawer__close" id="drawer-close" aria-label="Close navigation">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="mobile-drawer__links">
+      <a class="mobile-drawer__link" href="{{ url_for('index') }}"><i class="fa-solid fa-house"></i> Home</a>
+      <a class="mobile-drawer__link" href="{{ url_for('services') }}"><i class="fa-solid fa-car"></i> Services</a>
+      <a class="mobile-drawer__link" href="{{ url_for('fleet') }}"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
+      <a class="mobile-drawer__link" href="{{ url_for('about') }}"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a class="mobile-drawer__link" href="{{ url_for('index') }}#reviews"><i class="fa-solid fa-comments"></i> Reviews</a>
+      <a class="mobile-drawer__link" href="{{ url_for('online_booking') }}"><i class="fa-solid fa-calendar-check"></i> Book Online</a>
+      <a class="mobile-drawer__link" href="{{ url_for('contact') }}"><i class="fa-solid fa-location-dot"></i> Contact</a>
+    </div>
+    <div class="mobile-drawer__cta">
+      <a class="btn btn--whatsapp btn--full btn--lg" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+      </a>
+      <a class="btn btn--gold btn--full" href="tel:+919881598109">
+        <i class="fa-solid fa-phone"></i> Call Now (+91 9881598109)
+      </a>
+    </div>
+    <div class="mobile-drawer__contacts">
+      <a class="mobile-drawer__contact-link" href="tel:+919881598109">
+        <i class="fa-solid fa-phone"></i> +91 9881598109 (24/7)
+      </a>
+      <a class="mobile-drawer__contact-link" href="tel:+917020858192">
+        <i class="fa-solid fa-phone"></i> +91 7020858192
+      </a>
+      <a class="mobile-drawer__contact-link" href="mailto:khanafzal0404@gmail.com">
+        <i class="fa-solid fa-envelope"></i> khanafzal0404@gmail.com
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="position:relative;padding:7.5rem 0 3.5rem;background:#0d111c;color:#fff;text-align:center;">
+    <div class="page-hero__bg" style="position:absolute;inset:0;background-image:url('{{ url_for('static', filename='images/herocab.jpeg') }}');background-size:cover;background-position:center;opacity:0.22;"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <span class="sec-eyebrow" style="color:var(--clr-gold);">GET IN TOUCH</span>
+      <h1 class="page-hero__title" style="font-size:clamp(1.8rem,4.5vw,2.75rem);font-weight:800;margin-bottom:1rem;color:#fff;">
+        Contact Global Cab Services &ndash; 24/7 Nashik Taxi Booking
+      </h1>
+      <p class="page-hero__sub" style="font-size:1.05rem;color:rgba(255,255,255,.8);max-width:640px;margin-inline:auto;">
+        Have an inquiry, need a quick fare estimate, or ready to book your ride? Call us directly or message our 24/7 WhatsApp helpdesk for instant confirmation.
+      </p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <div style="background:var(--clr-off-white);padding:.75rem 0;border-bottom:1px solid var(--clr-border);">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol style="list-style:none;display:flex;gap:.5rem;margin:0;padding:0;font-size:.85rem;color:var(--clr-text-lt);">
+          <li><a href="{{ url_for('index') }}" style="color:var(--clr-charcoal);text-decoration:none;">Home</a></li>
+          <li><span>&rsaquo;</span></li>
+          <li style="color:var(--clr-gold-dk);font-weight:600;" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- CONTACT & BOOKING LAYOUT -->
+  <section class="section">
+    <div class="container">
+      <div class="booking-layout">
+        <!-- Left: Verified Contact Information & Map -->
+        <div class="booking-info">
+          <span class="sec-eyebrow">VERIFIED DETAILS</span>
+          <h2 class="contact-group-title" style="margin-bottom:.75rem;color:var(--clr-charcoal);font-size:1.4rem;font-weight:700;">Global Cab Services</h2>
+          <p style="font-size:.9rem;color:var(--clr-text-lt);margin-bottom:1.5rem;line-height:1.65;">
+            Serving Nashik, Mumbai, Pune, Shirdi, and all major cities in Maharashtra. Reach out through any of our verified communication channels:
+          </p>
+
+          <div class="contact-items">
+            <a class="ci" href="tel:+919881598109" aria-label="Call primary phone number +91 9881598109">
+              <span class="ci__icon ci__icon--gold"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">Primary Phone (24/7 Booking)</p>
+                <p class="ci__val">+91 9881598109</p>
+              </div>
+            </a>
+            <a class="ci" href="tel:+917020858192" aria-label="Call secondary phone number +91 7020858192">
+              <span class="ci__icon ci__icon--gold"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">Secondary Contact</p>
+                <p class="ci__val">+91 7020858192</p>
+              </div>
+            </a>
+            <a class="ci" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20enquire%20about%20a%20cab." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <span class="ci__icon ci__icon--green"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">WhatsApp Support</p>
+                <p class="ci__val">+91 9881598109</p>
+              </div>
+            </a>
+            <a class="ci" href="mailto:khanafzal0404@gmail.com" aria-label="Send email">
+              <span class="ci__icon ci__icon--blue"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">Email Address</p>
+                <p class="ci__val">khanafzal0404@gmail.com</p>
+              </div>
+            </a>
+            <a class="ci" href="https://g.page/r/Cd-LLnOEWd0wEBE/review" target="_blank" rel="noopener noreferrer" aria-label="Read Google Reviews">
+              <span class="ci__icon ci__icon--red"><i class="fa-brands fa-google" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">Google Business Profile</p>
+                <p class="ci__val">Verified 5-Star Reviews</p>
+              </div>
+            </a>
+            <div class="ci" style="cursor:default;">
+              <span class="ci__icon ci__icon--gold"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+              <div>
+                <p class="ci__label">Location</p>
+                <p class="ci__val">Nashik, Maharashtra, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1.25rem;">
+            <a class="btn btn--whatsapp" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20enquire%20about%20a%20cab." target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Now
+            </a>
+            <a class="btn btn--dark" href="tel:+919881598109">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-embed" style="margin-top:1.25rem;border-radius:12px;overflow:hidden;box-shadow:var(--sh-sm);border:1px solid rgba(0,0,0,0.08);height:230px;">
+            <iframe
+              src="https://maps.google.com/maps?q=Nashik,Maharashtra&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              title="Nashik, Maharashtra map"
+              loading="lazy"
+              style="width:100%;height:100%;border:0;"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div class="booking-form-wrap">
+          <div style="margin-bottom:1.25rem;">
+            <h3 style="font-size:1.35rem;font-weight:700;color:var(--clr-charcoal);margin-bottom:.25rem;">Quick WhatsApp Booking Form</h3>
+            <p style="font-size:.875rem;color:var(--clr-text-lt);">Fill in your travel details below and we will open WhatsApp with your trip information prefilled.</p>
+          </div>
+          <form id="booking-form" novalidate aria-label="Cab booking inquiry form">
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="bf-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__ctrl" type="text" id="bf-name" name="full_name" placeholder="Your full name" autocomplete="name" required />
+                <span class="field__err" role="alert" id="bf-name-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-phone">Mobile Number <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__ctrl" type="tel" id="bf-phone" name="customer_phone" placeholder="10-digit mobile number" autocomplete="tel" required inputmode="numeric" maxlength="10" />
+                <span class="field__err" role="alert" id="bf-phone-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-service">Service Type <span class="req" aria-hidden="true">*</span></label>
+                <select class="field__ctrl" id="bf-service" name="service_type" required>
+                  <option value="">Select a service</option>
+                  <option value="Local Rentals">Local Rentals</option>
+                  <option value="Airport Transfer">Airport Transfer</option>
+                  <option value="Round Trip Outstation">Round Trip Outstation</option>
+                  <option value="One-Way Outstation">One-Way Outstation</option>
+                  <option value="Executive Class / Corporate">Executive Class / Corporate</option>
+                  <option value="Customized Tour">Customized Tour</option>
+                </select>
+                <span class="field__err" role="alert" id="bf-service-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-vehicle">Vehicle Preference</label>
+                <select class="field__ctrl" id="bf-vehicle" name="vehicle_pref">
+                  <option value="">Any / No preference</option>
+                  <option value="Hyundai Aura (Sedan)">Hyundai Aura (Sedan)</option>
+                  <option value="Honda City (Premium Sedan)">Honda City (Premium Sedan)</option>
+                  <option value="Maruti Suzuki Ertiga (7-Seater)">Maruti Suzuki Ertiga (7-Seater)</option>
+                  <option value="Toyota Innova Crysta (Luxury SUV)">Toyota Innova Crysta (Luxury SUV)</option>
+                  <option value="Tempo Traveller (17/20/26 Seater)">Tempo Traveller (17/20/26 Seater)</option>
+                  <option value="Tata Winger (Group Travel)">Tata Winger (Group Travel)</option>
+                  <option value="Many More / Other Vehicle">Many More / Other Vehicle</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-pickup">Pickup Location <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__ctrl" type="text" id="bf-pickup" name="pickup_location" placeholder="e.g. Nashik City / Station" required />
+                <span class="field__err" role="alert" id="bf-pickup-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-drop">Destination <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__ctrl" type="text" id="bf-drop" name="drop_location" placeholder="e.g. Mumbai Airport / Shirdi" required />
+                <span class="field__err" role="alert" id="bf-drop-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-date">Travel Date <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__ctrl" type="date" id="bf-date" name="travel_date" required />
+                <span class="field__err" role="alert" id="bf-date-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-time">Pickup Time</label>
+                <input class="field__ctrl" type="time" id="bf-time" name="pickup_time" />
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-triptype">Trip Type <span class="req" aria-hidden="true">*</span></label>
+                <select class="field__ctrl" id="bf-triptype" name="trip_type" required>
+                  <option value="">Select trip type</option>
+                  <option value="One-Way Trip">One-Way Trip</option>
+                  <option value="Round Trip">Round Trip</option>
+                  <option value="Local (8 Hrs / 80 Km)">Local (8 Hrs / 80 Km)</option>
+                  <option value="Local (12 Hrs / 120 Km)">Local (12 Hrs / 120 Km)</option>
+                  <option value="Multi-Day Tour">Multi-Day Tour</option>
+                </select>
+                <span class="field__err" role="alert" id="bf-triptype-err"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bf-passengers">Number of Passengers</label>
+                <select class="field__ctrl" id="bf-passengers" name="passengers">
+                  <option value="">Select passengers</option>
+                  <option value="1 - 4 Passengers">1 - 4 Passengers (Sedan)</option>
+                  <option value="5 - 7 Passengers">5 - 7 Passengers (SUV / Ertiga / Crysta)</option>
+                  <option value="8 - 15 Passengers">8 - 15 Passengers (Winger / Mini Bus)</option>
+                  <option value="16+ Passengers">16+ Passengers (Tempo Traveller / Bus)</option>
+                </select>
+              </div>
+              <div class="field form-grid--full">
+                <label class="field__label" for="bf-notes">Additional Requirements</label>
+                <textarea class="field__ctrl field__ctrl--textarea" id="bf-notes" name="notes" rows="3" placeholder="Any special requirements, flight details, luggage notes..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-note" role="note" style="margin-top:1.25rem;">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Your inquiry will open in WhatsApp. Press <strong>Send</strong> in WhatsApp to dispatch your inquiry to our 24/7 desk.</span>
+            </div>
+
+            <button class="btn btn--whatsapp btn--full btn--lg" type="submit" id="booking-submit-btn" style="margin-top:1rem;">
+              <i class="fa-brands fa-whatsapp"></i> Send Inquiry on WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (ANIMATED VIDEO BACKGROUND) -->
+<footer class="footer footer--video" role="contentinfo" aria-label="Site footer">
+  <div class="footer__video-bg" aria-hidden="true">
+    <img class="footer__video-img" src="{{ url_for('static', filename='images/cab.gif') }}" alt="Global Cab Services cars travelling" />
+    <div class="footer__video-overlay"></div>
+  </div>
+  <div class="container footer__content">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand-name">Global Cab Services</p>
+        <p class="footer__brand-tag">Nashik's Trusted Cab Service</p>
+        <p class="footer__brand-desc">Reliable pick-up and drop services across Nashik, Mumbai, Pune, Shirdi and all of Maharashtra. Professional drivers, clean vehicles, transparent fares.</p>
+        <a class="footer__ci" href="tel:+919881598109"><i class="fa-solid fa-phone"></i> +91 9881598109</a>
+        <a class="footer__ci" href="tel:+917020858192"><i class="fa-solid fa-phone"></i> +91 7020858192</a>
+        <a class="footer__ci" href="mailto:khanafzal0404@gmail.com"><i class="fa-solid fa-envelope"></i> khanafzal0404@gmail.com</a>
+      </div>
+      <div>
+        <p class="footer__col-title">Services</p>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="{{ url_for('services') }}">Local Rentals</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Airport Transfer</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Round Trips</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">One-Way Cabs</a></li>
+          <li><a class="footer__link" href="{{ url_for('services') }}">Executive Class</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Our Fleet</p>
+        <ul class="footer__links">
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Hyundai Aura (Sedan)</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Maruti Suzuki Ertiga</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Toyota Innova Crysta</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tempo Traveller</a></li>
+          <li><a class="footer__link" href="{{ url_for('fleet') }}">Tata Winger</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Top Routes</p>
+        <div class="routes-wrap">
+          <span class="route-badge">Nashik &rarr; Mumbai</span>
+          <span class="route-badge">Nashik &rarr; Shirdi</span>
+          <span class="route-badge">Nashik &rarr; Pune</span>
+          <span class="route-badge">Mumbai &rarr; Nashik</span>
+          <span class="route-badge">Nashik &rarr; Aurangabad</span>
+          <span class="route-badge">Nashik &rarr; Surat</span>
+          <span class="route-badge">Nashik &rarr; Trimbakeshwar</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; {{ current_year }} Global Cab Services, Nashik. All rights reserved.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="footer__link" href="{{ google_reviews_url }}" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+        <a class="footer__link" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="footer__link" href="{{ url_for('contact') }}">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Action Buttons -->
+<div class="float-actions" role="group" aria-label="Quick contact buttons">
+  <a class="float-btn float-btn--phone" href="tel:+919881598109" aria-label="Call Global Cab Services" id="float-phone-btn">
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+    <span class="float-btn__tooltip">Call Now</span>
+  </a>
+  <a class="float-btn float-btn--wa" href="https://wa.me/919881598109?text=Hello%20Global%20Cab%20Services%2C%20I%20would%20like%20to%20enquire%20about%20a%20cab." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Global Cab Services" id="float-wa-btn">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="float-btn__tooltip">WhatsApp</span>
+  </a>
+</div>
+
+<script src="{{ url_for('static', filename='js/galaxy.js') }}"></script>
+</body>
+</html>

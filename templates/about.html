@@ -5,11 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Global Cab Services &ndash; Nashik's Trusted Cab Provider</title>
   <meta name="description" content="Learn about Global Cab Services &ndash; Nashik's reliable cab service for airport, outstation and local trips across Maharashtra. Professional drivers, clean vehicles." />
+  <meta name="keywords" content="About Global Cab Services, cab company Nashik, trusted taxi service Nashik, car rental provider Nashik, Nashik taxi booking" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="{{ site_url }}/about" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us | Global Cab Services &ndash; Nashik's Trusted Cab Provider" />
+  <meta property="og:description" content="Learn about Global Cab Services &ndash; Nashik's reliable cab service for airport, outstation and local trips across Maharashtra. Professional drivers, clean vehicles." />
+  <meta property="og:url" content="{{ site_url }}/about" />
+  <meta property="og:site_name" content="Global Cab Services" />
+  <meta property="og:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Global Cab Services &ndash; Nashik's Trusted Cab Provider" />
+  <meta name="twitter:description" content="Learn about Global Cab Services &ndash; Nashik's reliable cab service for airport, outstation and local trips across Maharashtra." />
+  <meta name="twitter:image" content="{{ site_url }}{{ url_for('static', filename='images/herocab.jpeg') }}" />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/galaxy.css') }}" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site_url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "{{ site_url }}/about"
+          }
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "{{ site_url }}/about#webpage",
+        "url": "{{ site_url }}/about",
+        "name": "About Global Cab Services",
+        "description": "Learn about Global Cab Services, our mission, vision, and reliable taxi services in Nashik and across Maharashtra."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -27,11 +80,11 @@
         </a>
         <nav class="navbar__nav" aria-label="Desktop navigation">
           <a class="navbar__link" href="{{ url_for('index') }}">Home</a>
-          <a class="navbar__link" href="{{ url_for('index') }}#services">Services</a>
-          <a class="navbar__link" href="{{ url_for('index') }}#fleet">Our Fleet</a>
+          <a class="navbar__link" href="{{ url_for('services') }}">Services</a>
+          <a class="navbar__link" href="{{ url_for('fleet') }}">Our Fleet</a>
           <a class="navbar__link" href="{{ url_for('about') }}">About</a>
           <a class="navbar__link" href="{{ url_for('index') }}#reviews">Reviews</a>
-          <a class="navbar__link" href="{{ url_for('index') }}#contact">Contact</a>
+          <a class="navbar__link" href="{{ url_for('contact') }}">Contact</a>
         </nav>
         <div class="navbar__actions">
           <a class="btn btn--primary btn--sm btn--pill" href="https://wa.me/919881598109" target="_blank" rel="noopener noreferrer">
@@ -54,7 +107,7 @@
   <nav class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <div class="mobile-drawer__header">
       <div class="mobile-drawer__brand">
-        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Global Cab Services Logo" width="36" height="36" style="border-radius:6px;object-fit:contain;" />
         <div class="mobile-drawer__brand-wrap">
           <span class="mobile-drawer__brand-name">Global Cab Services</span>
           <span class="mobile-drawer__brand-sub">Nashik, Maharashtra</span>
@@ -67,12 +120,12 @@
 
     <div class="mobile-drawer__links">
       <a class="mobile-drawer__link" href="{{ url_for('index') }}"><i class="fa-solid fa-house"></i> Home</a>
-      <a class="mobile-drawer__link" href="{{ url_for('index') }}#services"><i class="fa-solid fa-car"></i> Services</a>
-      <a class="mobile-drawer__link" href="{{ url_for('index') }}#fleet"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
+      <a class="mobile-drawer__link" href="{{ url_for('services') }}"><i class="fa-solid fa-car"></i> Services</a>
+      <a class="mobile-drawer__link" href="{{ url_for('fleet') }}"><i class="fa-solid fa-car-side"></i> Our Fleet</a>
       <a class="mobile-drawer__link" href="{{ url_for('about') }}"><i class="fa-solid fa-circle-info"></i> About Us</a>
       <a class="mobile-drawer__link" href="{{ url_for('index') }}#reviews"><i class="fa-solid fa-comments"></i> Reviews</a>
-      <a class="mobile-drawer__link" href="{{ url_for('index') }}#booking"><i class="fa-solid fa-calendar-check"></i> Book a Cab</a>
-      <a class="mobile-drawer__link" href="{{ url_for('index') }}#contact"><i class="fa-solid fa-location-dot"></i> Contact</a>
+      <a class="mobile-drawer__link" href="{{ url_for('online_booking') }}"><i class="fa-solid fa-calendar-check"></i> Book Online</a>
+      <a class="mobile-drawer__link" href="{{ url_for('contact') }}"><i class="fa-solid fa-location-dot"></i> Contact</a>
     </div>
 
     <div class="mobile-drawer__cta">
